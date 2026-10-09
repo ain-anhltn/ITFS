@@ -1,0 +1,116 @@
+---
+title: 06 · Testing & Quality Assurance
+description: Test đúng chỗ. Chất lượng đúng mức. Từ viết test đến xây dựng quality culture.
+---
+
+# Testing & Quality Assurance
+
+> **Test đúng chỗ. Chất lượng đúng mức. Từ viết test đến xây dựng quality culture.**
+
+:::warning[Thay đổi lớn nhất về tư duy — Test Non-Negotiable (P7)]
+Kiểm thử là bắt buộc, kể cả với code do AI sinh. Giá trị của test đo bằng kịch bản thực tế mà nó bảo vệ, không phải bằng % coverage.
+:::
+
+## Lộ trình học 9 giai đoạn
+
+| #   | Giai đoạn                          | Nội dung                                                                | Trọng tâm |
+| --- | ---------------------------------- | ----------------------------------------------------------------------- | --------- |
+| 1   | **Test Basics**                    | Các loại test, testing pyramid, test suites, conventions                | J1        |
+| 2   | **Testing Principles**             | Mocks, stubs, spies, coverage vs confidence                             | J1        |
+| 3   | **Test Case Design**               | Scenarios, edge cases, boundary values, environments, evidence          | J2        |
+| 4   | **Feature Test Strategy**          | Unit + integration + e2e trên luồng DB/API thực                         | J2        |
+| 5   | **Test Architecture & Automation** | Meaningful coverage, automation patterns, Playwright/Cypress            | J3        |
+| 6   | **Project Quality Architecture**   | Quality metrics, CI test pipelines, standards, test patterns            | M1 – M2   |
+| 7   | **Cross-Project QA Strategy**      | Chiến lược cho critical systems, QA automation quy mô lớn, reliability  | M1 – M2   |
+| 8   | **QA Governance & Standards**      | Reference architectures, quality culture, standards, đầu tư             | M3 – S1   |
+| 9   | **Enterprise Quality Vision**      | Quality frameworks, tooling, chiến lược tổ chức, AI-augmented workflows | S2 – S3   |
+
+## Junior
+
+### J1 · Remember
+
+- **Giai đoạn trọng tâm:** Test Basics, Testing Principles
+- **Chủ đề cốt lõi:** Test types, pyramid, suites, conventions. Mocks, stubs, spies, coverage, confidence.
+- **Vì sao:** Chất lượng bắt đầu từ phản hồi rõ ràng. Chỉ số coverage một mình không đảm bảo chất lượng.
+- **Hành vi:** Nhận biết các loại test và testing pyramid. Chạy test suite, đọc kết quả. Tuân thủ test conventions.
+- **AI:** Dùng AI sinh test. Nhận biết khi AI chỉ test happy path.
+- **Tham chiếu:** P7
+
+### J2 · Understand
+
+- **Giai đoạn trọng tâm:** Test Case Design, Feature Test Strategy
+- **Chủ đề cốt lõi:** Scenarios, edge cases, environments, evidence. Unit, integration, e2e, luồng DB/API thực.
+- **Vì sao:** Bug ẩn ngoài happy path. Test nhiều tầng tạo niềm tin.
+- **Hành vi:** Hiểu testing pyramid, mock/stub/spy. Hiểu rằng coverage cao không có nghĩa là chất lượng cao.
+- **AI:** Đánh giá test do AI viết có ý nghĩa không. Phát hiện test "đúng syntax nhưng sai logic".
+- **Tham chiếu:** V1
+
+### J3 · Understand → Apply
+
+- **Giai đoạn trọng tâm:** Test Architecture & Automation
+- **Chủ đề cốt lõi:** Meaningful coverage, automation patterns, Playwright/Cypress.
+- **Vì sao:** Quy mô lớn cần vòng phản hồi tin cậy.
+- **Hành vi:** Tự thiết kế test cases — chủ động nghĩ edge cases thay vì chỉ dựa vào gợi ý của AI. Setup test environment. Bug rate ≤ 1/4. Evidence đầy đủ.
+- **AI:** AI sinh boilerplate, kỹ sư định nghĩa scenarios và edge cases. AI thường bỏ sót: boundary, error paths, concurrency.
+- **Tham chiếu:** V3
+
+## Middle
+
+### M1 · Apply
+
+- **Giai đoạn trọng tâm:** Project Quality Architecture, Cross-Project QA Strategy
+- **Chủ đề cốt lõi:** Metrics, CI pipelines, standards, test patterns. Chiến lược cho critical systems, QA automation quy mô lớn, reliability.
+- **Vì sao:** Chất lượng là một hệ thống, không chỉ là công cụ. Thực hành dùng chung giảm rủi ro.
+- **Hành vi:** Xây test strategy cho feature phức tạp (unit + integration + e2e). Integration test trên DB/API thực. Bug rate ≤ 1/6. Team tin tưởng khi merge.
+- **AI:** Chịu trách nhiệm chất lượng cả code lẫn test do AI sinh. Test có bao phủ kịch bản business thật không?
+- **Tham chiếu:** P7, DoD
+
+### M2 · Apply → Analyze
+
+- **Giai đoạn trọng tâm:** Project Quality Architecture, Cross-Project QA Strategy
+- **Chủ đề cốt lõi:** Metrics, CI pipelines, standards, test patterns. Chiến lược cho critical systems, QA automation quy mô lớn, reliability.
+- **Vì sao:** Chất lượng là một hệ thống, không chỉ là công cụ. Thực hành dùng chung giảm rủi ro.
+- **Management:** Đánh giá chất lượng test của team (không chỉ % coverage). Tìm testing gaps. Coach viết test có ý nghĩa.
+- **Expert:** Test architecture, automation (Playwright/Cypress). Bug rate ≤ 1/8.
+- **AI:** Test do AI viết cho coverage cao nhưng bug vẫn lọt — tìm root cause.
+- **Tham chiếu:** V6
+
+### M3 · Analyze
+
+- **Giai đoạn trọng tâm:** QA Governance & Standards
+- **Chủ đề cốt lõi:** Reference architectures, quality culture, standards, đầu tư.
+- **Vì sao:** Tổ chức cần nhất quán ở quy mô lớn.
+- **Management:** Quality metrics toàn project. Testing standards. Quality là tư duy, không phải công cụ.
+- **Expert:** Test infrastructure. CI pipeline. Test patterns. Bug rate ≤ 1/10.
+- **AI:** Test do AI sinh phải qua cùng chuẩn review — không ngoại lệ.
+- **Tham chiếu:** P12
+
+## Senior
+
+### S1 · Analyze → Evaluate
+
+- **Giai đoạn trọng tâm:** QA Governance & Standards
+- **Chủ đề cốt lõi:** Reference architectures, quality culture, standards, đầu tư.
+- **Vì sao:** Tổ chức cần nhất quán ở quy mô lớn.
+- **Management:** Đánh giá testing practices trên nhiều dự án. Phê duyệt test strategy cho critical systems.
+- **Expert:** Test infrastructure quy mô lớn. QA automation. Best practices.
+- **AI:** Cảnh giác "false confidence" khi lạm dụng AI sinh test.
+- **Tham chiếu:** V1
+
+### S2 · Evaluate
+
+- **Giai đoạn trọng tâm:** Enterprise Quality Vision
+- **Chủ đề cốt lõi:** Quality frameworks, tooling, chiến lược tổ chức, AI-augmented workflows.
+- **Vì sao:** Chất lượng trở thành năng lực của tổ chức.
+- **Management:** Quality standards cho department. Đánh giá đầu tư. Quality culture ở quy mô lớn.
+- **Expert:** Testing reference architectures. Chuẩn quality engineering.
+- **AI:** Thiết lập chuẩn QA có AI hỗ trợ ở cấp department.
+
+### S3 · Evaluate → Create
+
+- **Giai đoạn trọng tâm:** Enterprise Quality Vision
+- **Chủ đề cốt lõi:** Quality frameworks, tooling, chiến lược tổ chức, AI-augmented workflows.
+- **Vì sao:** Chất lượng trở thành năng lực của tổ chức.
+- **Management:** Tầm nhìn chất lượng của tổ chức. QA framework cấp tổ chức.
+- **Expert:** Sáng tạo testing frameworks/tools. Đóng góp cho ngành.
+- **AI:** Kiến tạo framework quality engineering có AI hỗ trợ.

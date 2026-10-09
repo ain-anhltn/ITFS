@@ -1,0 +1,40 @@
+.badge {
+  --badge-mix: 10%;
+
+  display: inline-block;
+  padding: 0.125rem var(--itfs-space-2);
+  border-radius: var(--itfs-radius-pill);
+  background-color: color-mix(
+    in srgb,
+    var(--itfs-color-accent) var(--badge-mix),
+    var(--itfs-color-bg)
+  );
+  color: var(--itfs-color-accent-strong);
+  font: var(--itfs-font-weight-semibold) var(--itfs-font-size-xs) / 1.4
+    var(--itfs-font-family-base);
+  font-variant-numeric: tabular-nums;
+  vertical-align: middle;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.J {
+  --badge-mix: 10%;
+}
+
+.M {
+  --badge-mix: 20%;
+}
+
+:global(html[data-theme="dark"]) .J {
+  --badge-mix: 12%;
+}
+
+:global(html[data-theme="dark"]) .M {
+  --badge-mix: 24%;
+}
+
+.S {
+  background-color: var(--itfs-color-accent);
+  color: var(--itfs-color-on-accent);
+}

@@ -1,0 +1,112 @@
+---
+title: 01 · Programming & Frameworks
+description: Viết code đúng. Dùng framework chuẩn. Từ thực thi đến kiến tạo công nghệ.
+---
+
+# Programming & Frameworks
+
+> **Viết code đúng. Dùng framework chuẩn. Từ thực thi đến kiến tạo công nghệ.**
+
+## Lộ trình học 9 giai đoạn
+
+| #   | Giai đoạn                      | Nội dung                                                                     | Trọng tâm |
+| --- | ------------------------------ | ---------------------------------------------------------------------------- | --------- |
+| 1   | **Problem Solving Basics**     | Decomposition, inputs/outputs, constraints — tư duy bài toán trước khi code  | J1        |
+| 2   | **Code Foundations**           | Biến, hàm, kiểu dữ liệu, luồng điều khiển — diễn đạt logic bằng code         | J1        |
+| 3   | **Data & State**               | Data models, state, persistence — dữ liệu quyết định hành vi ứng dụng        | J2        |
+| 4   | **Program Structure**          | Modules, tái sử dụng, dependencies — cấu trúc giúp codebase dễ mở rộng       | J2        |
+| 5   | **Runtime & Execution**        | Cách code chạy, async, concurrency                                           | J3        |
+| 6   | **Application Flow**           | Routing, validation, authentication, lifecycle                               | J3        |
+| 7   | **Framework Fundamentals**     | Conventions, abstractions, patterns — framework tồn tại để chuẩn hóa gì      | M1        |
+| 8   | **Integration & Trade-offs**   | APIs, databases, queues, lựa chọn stack — ranh giới và đánh đổi              | M2 – M3   |
+| 9   | **Quality, Scale & Evolution** | Testing, security, performance, deployment — phần mềm phải sống qua thay đổi | S1 – S3   |
+
+## Junior
+
+### J1 · Remember
+
+- **Giai đoạn trọng tâm:** Problem Solving Basics, Code Foundations
+- **Chủ đề cốt lõi:** Decomposition, inputs/outputs, constraints. Variables, functions, types, control flow.
+- **Vì sao:** Lập trình bắt đầu từ bài toán, không phải từ cú pháp. Code là cách diễn đạt logic.
+- **Hành vi:** Viết code đúng syntax theo hướng dẫn. Nhận biết cấu trúc project và conventions. Hoàn thành task đơn giản, biết escalate khi bí.
+- **AI:** Dùng AI hỗ trợ coding cơ bản. Nhận biết khi AI vi phạm conventions của project.
+- **Tham chiếu:** P1
+
+### J2 · Understand
+
+- **Giai đoạn trọng tâm:** Data & State, Program Structure
+- **Chủ đề cốt lõi:** Data models, state, persistence. Modules, reuse, dependencies.
+- **Vì sao:** Dữ liệu định hình hành vi ứng dụng. Cấu trúc tốt giữ cho code mở rộng được.
+- **Hành vi:** Giải thích code flow, logic module và vì sao conventions quan trọng. Đọc hiểu codebase của người khác. Phân biệt code "chạy được" nhưng sai cách tiếp cận.
+- **AI:** Viết prompt có context. Phát hiện AI dùng pattern hoặc thư viện không phù hợp.
+- **Tham chiếu:** P3
+
+### J3 · Understand → Apply
+
+- **Giai đoạn trọng tâm:** Runtime & Execution, Application Flow
+- **Chủ đề cốt lõi:** Cách code chạy, async, concurrency. Routing, validation, auth, lifecycle.
+- **Vì sao:** Cách thực thi ảnh hưởng trực tiếp đến hành vi. Ứng dụng cần luồng và quy tắc rõ ràng.
+- **Hành vi:** Tự implement feature với ít hướng dẫn. Áp dụng clean code nhất quán. Self-review trước khi submit. Bắt đầu cross-stack (FE ↔ BE).
+- **AI:** Dùng AI thành thạo. Cung cấp Context Packet trước khi prompt. Review và refactor output của AI.
+- **Tham chiếu:** P2, P10
+
+## Middle
+
+### M1 · Apply
+
+- **Giai đoạn trọng tâm:** Framework Fundamentals
+- **Chủ đề cốt lõi:** Conventions, abstractions, patterns.
+- **Vì sao:** Hiểu framework tồn tại để làm gì và chuẩn hóa điều gì.
+- **Hành vi:** Own module/feature end-to-end. Thành thạo ≥ 1 stack, làm việc hiệu quả ở stack thứ hai. Code review peers có chất lượng. Refactor có hệ thống.
+- **AI:** Chịu trách nhiệm chất lượng code do AI sinh. Đảm bảo DoR trước khi AI implement và DoD trước khi merge.
+- **Tham chiếu:** P4, P7
+
+### M2 · Apply → Analyze
+
+- **Giai đoạn trọng tâm:** Integration & Trade-offs
+- **Chủ đề cốt lõi:** APIs, databases, queues, lựa chọn stack.
+- **Vì sao:** Ranh giới hệ thống và đánh đổi quyết định chất lượng lâu dài.
+- **Management:** Code review chiến lược — nhận diện pattern, coach chất lượng cho team. Phân tích trade-off khi chọn tech stack.
+- **Expert:** Phân tích sâu framework (performance, DX, ecosystem). Viết shared libraries. Làm chủ nhiều stack.
+- **AI:** Phân tích cách team dùng AI — phát hiện khi team bỏ qua quality gates.
+- **Tham chiếu:** V1
+
+### M3 · Analyze
+
+- **Giai đoạn trọng tâm:** Integration & Trade-offs
+- **Chủ đề cốt lõi:** APIs, databases, queues, lựa chọn stack.
+- **Vì sao:** Ranh giới hệ thống và đánh đổi quyết định chất lượng lâu dài.
+- **Management:** Định nghĩa coding standards cho Line/Project. Phân tích năng lực team, lên kế hoạch upskilling.
+- **Expert:** Phân tích bức tranh công nghệ. Là go-to person cho quyết định kỹ thuật. Đóng góp internal tools.
+- **AI:** Định nghĩa AI coding guidelines: bắt buộc human review, yêu cầu Context Packet.
+- **Tham chiếu:** V5
+
+## Senior
+
+### S1 · Analyze → Evaluate
+
+- **Giai đoạn trọng tâm:** Quality, Scale & Evolution
+- **Chủ đề cốt lõi:** Testing, security, performance, deployment.
+- **Vì sao:** Phần mềm phải sống sót qua thay đổi.
+- **Management:** Đánh giá quyết định tech stack trên nhiều dự án. Phê duyệt lựa chọn kỹ thuật. Thúc đẩy chuẩn hóa.
+- **Expert:** Đánh giá emerging frameworks. Định nghĩa best practices. Technical advisor cho nhiều dự án.
+- **AI:** Đánh giá AI-augmented development practices trên nhiều dự án. Thúc đẩy áp dụng Manifesto.
+
+### S2 · Evaluate
+
+- **Giai đoạn trọng tâm:** Quality, Scale & Evolution
+- **Chủ đề cốt lõi:** Testing, security, performance, deployment.
+- **Vì sao:** Phần mềm phải sống sót qua thay đổi.
+- **Management:** Thiết lập technology standards cho department. Xây dựng hiring bar. Đánh giá đầu tư công nghệ.
+- **Expert:** Thiết lập chuẩn coding excellence. Đánh giá technology roadmap.
+- **AI:** Thiết lập chuẩn AI-augmented development cho department.
+- **Tham chiếu:** V6
+
+### S3 · Evaluate → Create
+
+- **Giai đoạn trọng tâm:** Quality, Scale & Evolution
+- **Chủ đề cốt lõi:** Testing, security, performance, deployment.
+- **Vì sao:** Phần mềm phải sống sót qua thay đổi.
+- **Management:** Tạo dựng technology vision cho tổ chức. Thiết kế technology adoption framework.
+- **Expert:** Sáng tạo frameworks/tools mới. Đóng góp best practices cho ngành. Thought leadership.
+- **AI:** Kiến tạo văn hóa AI-augmented development cho tổ chức.

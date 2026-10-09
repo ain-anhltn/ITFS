@@ -1,0 +1,32 @@
+.wrapper {
+  margin: 0 0 var(--md-flow-space, var(--itfs-space-5));
+}
+
+.frame {
+  display: block;
+  width: 100%;
+  border: 1px solid var(--itfs-color-border);
+  border-radius: var(--itfs-radius-md);
+  background: var(--itfs-color-surface-raised);
+}
+
+.caption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--itfs-space-1) var(--itfs-space-4);
+  margin-top: var(--itfs-space-2);
+  color: var(--itfs-color-text-muted);
+  font-size: var(--itfs-font-size-sm);
+  line-height: var(--itfs-line-height-snug);
+}
+
+.captionText {
+  flex: 1 1 16rem;
+}
+
+.openLink {
+  margin-left: auto;
+  white-space: nowrap;
+}

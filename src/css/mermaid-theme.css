@@ -1,0 +1,109 @@
+/* ---- General ---- */
+.label,
+.nodeLabel,
+.edgeLabel,
+.cluster-label,
+text {
+  color: var(--itfs-mermaid-text);
+  fill: var(--itfs-mermaid-text);
+}
+
+/* ---- Flowchart / state / class ---- */
+.node rect,
+.node circle,
+.node ellipse,
+.node polygon,
+.node path,
+.basic.label-container {
+  fill: var(--itfs-mermaid-node-bg);
+  stroke: var(--itfs-mermaid-node-border);
+  stroke-width: 1px;
+}
+
+.cluster rect {
+  fill: var(--itfs-mermaid-group-bg);
+  stroke: var(--itfs-mermaid-group-border);
+  stroke-dasharray: 4 3;
+}
+
+.flowchart-link,
+.edgePath .path,
+.relation,
+.transition {
+  stroke: var(--itfs-mermaid-line);
+}
+
+.arrowheadPath,
+.marker,
+marker path {
+  fill: var(--itfs-mermaid-line);
+  stroke: var(--itfs-mermaid-line);
+}
+
+.edgeLabel,
+.edgeLabel p,
+.labelBkg {
+  background-color: var(--itfs-mermaid-label-bg);
+}
+
+.edgeLabel rect {
+  fill: var(--itfs-mermaid-label-bg);
+  opacity: 1;
+}
+
+/* ---- Sequence ---- */
+.actor {
+  fill: var(--itfs-mermaid-node-bg);
+  stroke: var(--itfs-mermaid-node-border);
+}
+
+text.actor > tspan {
+  fill: var(--itfs-mermaid-text);
+}
+
+.actor-line {
+  stroke: var(--itfs-mermaid-group-border);
+}
+
+.messageLine0,
+.messageLine1 {
+  stroke: var(--itfs-mermaid-line);
+}
+
+#arrowhead path,
+.arrowhead {
+  fill: var(--itfs-mermaid-line);
+  stroke: var(--itfs-mermaid-line);
+}
+
+.messageText,
+.labelText,
+.labelText > tspan,
+.loopText,
+.loopText > tspan,
+.noteText,
+.noteText > tspan {
+  fill: var(--itfs-mermaid-text);
+  stroke: none;
+}
+
+.labelBox {
+  fill: var(--itfs-mermaid-group-bg);
+  stroke: var(--itfs-mermaid-group-border);
+}
+
+.loopLine {
+  stroke: var(--itfs-mermaid-group-border);
+}
+
+.note {
+  fill: var(--itfs-mermaid-note-bg);
+  stroke: var(--itfs-mermaid-note-border);
+}
+
+.activation0,
+.activation1,
+.activation2 {
+  fill: var(--itfs-mermaid-group-bg);
+  stroke: var(--itfs-mermaid-node-border);
+}

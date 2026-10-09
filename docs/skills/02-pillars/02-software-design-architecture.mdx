@@ -1,0 +1,114 @@
+---
+title: 02 · Software Design & Architecture
+description: Thiết kế đúng. Kiến trúc vững. Từ sử dụng pattern đến định hình hệ thống.
+---
+
+# Software Design & Architecture
+
+> **Thiết kế đúng. Kiến trúc vững. Từ sử dụng pattern đến định hình hệ thống.**
+
+:::tip[Năng lực lõi]
+**Impact Analysis** và **Trade-off Analysis** — hai giai đoạn sau của [Requirement Thinking](../01-framework/04-requirement-thinking.mdx) — là năng lực trung tâm của pillar này.
+:::
+
+## Lộ trình học 9 giai đoạn
+
+| #   | Giai đoạn                       | Nội dung                                                                    | Trọng tâm |
+| --- | ------------------------------- | --------------------------------------------------------------------------- | --------- |
+| 1   | **Clean Code**                  | Naming, structure, readability — code rõ ràng giảm bug, dễ thay đổi         | J1        |
+| 2   | **Programming Paradigms**       | Procedural/structured, object-oriented, functional                          | J1        |
+| 3   | **Object-Oriented Programming** | Abstraction, encapsulation, inheritance, polymorphism                       | J2        |
+| 4   | **Design Principles**           | SOLID, DRY, YAGNI, composition over inheritance                             | J2        |
+| 5   | **Design Patterns**             | Creational, structural, behavioral: Singleton, Factory, Observer, Strategy… | J3        |
+| 6   | **Architectural Principles**    | Coupling, cohesion, module boundaries, policy vs details                    | M1        |
+| 7   | **Architectural Styles**        | Layered, client-server, monolithic, component-based                         | M1        |
+| 8   | **Architectural Patterns**      | MVC, MVVM, Domain-Driven Design                                             | M2 – M3   |
+| 9   | **Enterprise Patterns**         | DTO, Repository, Mapper, Value Object, Transaction Script                   | S1 – S3   |
+
+## Junior
+
+### J1 · Remember
+
+- **Giai đoạn trọng tâm:** Clean Code, Programming Paradigms
+- **Chủ đề cốt lõi:** Naming, structure, readability. Structured, object-oriented, functional.
+- **Vì sao:** Code rõ ràng giảm bug và dễ thay đổi. Mỗi paradigm định hình một cách giải bài toán.
+- **Hành vi:** Nhận biết MVC/MVVM, OOP cơ bản. Nhận biết đoạn code thuộc layer nào.
+- **AI:** Nhận biết khi AI đặt code sai layer.
+- **Tham chiếu:** P1
+
+### J2 · Understand
+
+- **Giai đoạn trọng tâm:** Object-Oriented Programming, Design Principles
+- **Chủ đề cốt lõi:** Abstraction, encapsulation, inheritance, polymorphism. SOLID, DRY, YAGNI, composition.
+- **Vì sao:** Hành vi và trách nhiệm cần mô hình rõ ràng. Nguyên tắc tốt giữ code linh hoạt, dễ bảo trì.
+- **Hành vi:** Giải thích vì sao tách layers và dependency giữa modules. Hiểu patterns cơ bản (Singleton, Factory) và SOLID. Nhận biết thay đổi ở module mình ảnh hưởng đến module khác.
+- **AI:** Phát hiện AI gợi ý pattern không phù hợp context.
+- **Tham chiếu:** P3
+
+### J3 · Understand → Apply
+
+- **Giai đoạn trọng tâm:** Design Patterns
+- **Chủ đề cốt lõi:** Observer, Strategy, Factory.
+- **Vì sao:** Giải pháp tái sử dụng giúp xử lý các vấn đề thiết kế lặp lại.
+- **Hành vi:** Áp dụng patterns cơ bản (Singleton, Factory, DI). Thiết kế module tuân thủ SOLID. Refactor để tách concerns. Vẽ component diagram. Kiểm tra tác động cơ bản trước khi thay đổi cấu trúc.
+- **AI:** Dùng AI gợi ý pattern nhưng tự quyết định. Refactor output của AI cho đúng kiến trúc.
+- **Tham chiếu:** P4
+
+## Middle
+
+### M1 · Apply
+
+- **Giai đoạn trọng tâm:** Architectural Principles, Architectural Styles
+- **Chủ đề cốt lõi:** Coupling, cohesion, boundaries, policy vs details. Layered, client-server, monolithic, component-based.
+- **Vì sao:** Dependency phải được kiểm soát. Hình dạng hệ thống quyết định khả năng thay đổi và mở rộng.
+- **Hành vi:** Thiết kế kiến trúc feature/module end-to-end. Áp dụng patterns phức tạp (Observer, Strategy, Decorator). Phân tích tác động lên các module liên quan trước khi code. Trình bày ≥ 2 design options kèm ưu, nhược điểm.
+- **AI:** Tạo Implementation Plan trước khi để AI sinh code. Kiểm tra output của AI có khớp với thiết kế tổng thể.
+- **Tham chiếu:** P2, P4
+
+### M2 · Apply → Analyze
+
+- **Giai đoạn trọng tâm:** Architectural Patterns
+- **Chủ đề cốt lõi:** MVC, Domain-Driven Design.
+- **Vì sao:** Patterns tổ chức ứng dụng ở mức cao hơn.
+- **Management:** Phân tích design decisions, nhận diện over/under-engineering. Review architecture proposals.
+- **Expert:** System patterns (Event-Driven, CQRS, Pub/Sub). Monolith vs Microservices. Đánh giá dependency cross-module và side effect trước khi code.
+- **AI:** AI có xu hướng thiên về độ phức tạp — kỹ sư phải là bộ lọc.
+- **Tham chiếu:** V4
+
+### M3 · Analyze
+
+- **Giai đoạn trọng tâm:** Architectural Patterns
+- **Chủ đề cốt lõi:** MVC, Domain-Driven Design.
+- **Vì sao:** Patterns tổ chức ứng dụng ở mức cao hơn.
+- **Management:** Quản lý technical debt, ưu tiên refactoring. Thúc đẩy viết ADR. Gắn kiến trúc với mục tiêu business. Trình bày các phương án kèm ưu, nhược điểm cho stakeholders.
+- **Expert:** Kiến trúc toàn project — scalability, durability, failover. Trade-off: cân bằng chi phí, thời gian, chất lượng.
+- **AI:** AI không thể gắn kiến trúc với mục tiêu business — đó là việc của kỹ sư.
+
+## Senior
+
+### S1 · Analyze → Evaluate
+
+- **Giai đoạn trọng tâm:** Enterprise Patterns
+- **Chủ đề cốt lõi:** DTO, Repository, Mapper, Value Object, Transaction Script.
+- **Vì sao:** Hệ thống lớn cần nhất quán và phối hợp.
+- **Management:** Đánh giá kiến trúc trên nhiều dự án. Thúc đẩy chuẩn hóa. Đánh giá tác động của tech debt.
+- **Expert:** System design phức tạp (HA, scalability). Định nghĩa quy trình architecture review.
+- **AI:** Đánh giá kiến trúc do AI đề xuất dựa trên ràng buộc thực tế.
+
+### S2 · Evaluate
+
+- **Giai đoạn trọng tâm:** Enterprise Patterns
+- **Chủ đề cốt lõi:** DTO, Repository, Mapper, Value Object, Transaction Script.
+- **Vì sao:** Hệ thống lớn cần nhất quán và phối hợp.
+- **Management:** Architecture standards & governance. Xây dựng Architecture Review Board.
+- **Expert:** Reference architectures. Đánh giá emerging patterns. Phê duyệt quyết định có rủi ro cao.
+- **AI:** Thiết lập chuẩn cho công việc kiến trúc có AI hỗ trợ ở cấp department.
+
+### S3 · Evaluate → Create
+
+- **Giai đoạn trọng tâm:** Enterprise Patterns
+- **Chủ đề cốt lõi:** DTO, Repository, Mapper, Value Object, Transaction Script.
+- **Vì sao:** Hệ thống lớn cần nhất quán và phối hợp.
+- **Management:** Architecture governance framework. Chiến lược kiến trúc gắn với tầm nhìn công ty.
+- **Expert:** Cách tiếp cận kiến trúc mới. Kiến trúc platform/ecosystem.
+- **AI:** Kiến tạo quy trình thiết kế kiến trúc có AI hỗ trợ.

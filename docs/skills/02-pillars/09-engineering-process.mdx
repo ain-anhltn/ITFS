@@ -1,0 +1,116 @@
+---
+title: 09 · Engineering Process
+description: Quy trình rõ. Tiêu chuẩn vững. Từ tuân thủ đến kiến tạo quy chuẩn.
+---
+
+# Engineering Process
+
+> **Quy trình rõ. Tiêu chuẩn vững. Từ tuân thủ đến kiến tạo quy chuẩn.**
+
+:::tip[Tác động lớn nhất (P6, P10) — nghĩ trước khi làm]
+Quy trình là nơi [Requirement Thinking](../01-framework/04-requirement-thinking.mdx) trở thành thói quen: **DoR** trước khi làm, **DoD** trước khi merge, chất lượng được kiểm soát ngay từ đầu (shift-left). Code do AI sinh đi qua đúng quy trình như code do người viết.
+:::
+
+## Lộ trình học 9 giai đoạn
+
+| #   | Giai đoạn                               | Nội dung                                                                             | Trọng tâm |
+| --- | --------------------------------------- | ------------------------------------------------------------------------------------ | --------- |
+| 1   | **Process Basics**                      | Git, branches, pull requests, linters, formatters                                    | J1        |
+| 2   | **Engineering Conventions**             | Clean code, conventions, code review, CI/CD                                          | J1 – J2   |
+| 3   | **PR & Delivery Discipline**            | DRY, naming, self-review, PR evidence                                                | J2 – J3   |
+| 4   | **Feature Delivery Process**            | Backlog flow, DoR/DoD, review chi tiết, evidence truy vết được                       | J3 – M1   |
+| 5   | **Team Process Effectiveness**          | Team workflows, backlog hygiene, tooling, coaching                                   | M1 – M2   |
+| 6   | **Project Process Architecture**        | Standards, monitoring, quality gates, tech-lead discipline                           | M2 – M3   |
+| 7   | **Cross-Project Engineering Standards** | Workflow tooling, engineering handbook, change approval, shared standards            | M3 – S1   |
+| 8   | **Process Governance & Excellence**     | Governance, excellence standards, process improvement frameworks                     | S1 – S2   |
+| 9   | **Organizational Engineering Culture**  | Văn hóa engineering, process framework tổ chức, AI-era practices, manifesto adoption | S2 – S3   |
+
+## Junior
+
+### J1 · Remember
+
+- **Giai đoạn trọng tâm:** Process Basics, Engineering Conventions
+- **Chủ đề cốt lõi:** Git, branches, PRs. Linters, formatters. Clean code, conventions.
+- **Vì sao:** Tính nhất quán bắt đầu từ kỷ luật với những điều cơ bản. Tốc độ không đi kèm quy trình tạo ra rủi ro.
+- **Hành vi:** Dùng Git cơ bản. Tuân thủ conventions. Dùng linter/formatter. Thực hiện đúng quy trình branch và PR.
+- **AI:** Không commit output của AI khi chưa qua linter. Nhận biết code AI vi phạm conventions.
+- **Tham chiếu:** P10
+
+### J2 · Understand
+
+- **Giai đoạn trọng tâm:** Engineering Conventions, PR & Delivery Discipline
+- **Chủ đề cốt lõi:** Clean code, conventions. Code review, CI/CD. DRY, naming. Self-review, PR evidence.
+- **Vì sao:** Tốc độ không đi kèm quy trình tạo ra rủi ro. Chất lượng phụ thuộc vào thực thi có kỷ luật.
+- **Hành vi:** Hiểu clean code, conventions, Git flow, code review và CI/CD pipeline. Áp dụng DRY, đặt tên có ý nghĩa. Tự review trước khi tạo PR.
+- **AI:** Output của AI phải tuân theo **cùng** quy trình. Nhận biết AI tăng tốc độ nhưng dễ tạo rủi ro khi bỏ qua review.
+- **Tham chiếu:** P6, P10
+
+### J3 · Understand → Apply
+
+- **Giai đoạn trọng tâm:** PR & Delivery Discipline, Feature Delivery Process
+- **Chủ đề cốt lõi:** DRY, meaningful naming. Self-review, PR evidence. Backlog flow, DoR/DoD. Review chi tiết, evidence truy vết được.
+- **Vì sao:** Chất lượng phụ thuộc vào thực thi có kỷ luật. Giao hàng tin cậy cần các bước truy vết được.
+- **Hành vi:** Viết clean code nhất quán. PR description rõ ràng. Self-review. Tuân thủ Git flow. Giao hàng theo DoR → implement → DoD → merge.
+- **AI:** Áp dụng trọn quy trình cho code AI: conventions, PR, self-review và evidence. Không "fast-track" code AI.
+- **Tham chiếu:** P6, DoR/DoD
+
+## Middle
+
+### M1 · Apply
+
+- **Giai đoạn trọng tâm:** Feature Delivery Process, Team Process Effectiveness
+- **Chủ đề cốt lõi:** Backlog flow, DoR/DoD. Review chi tiết, evidence. Team workflows, backlog hygiene. Tooling, coaching.
+- **Vì sao:** Giao hàng tin cậy cần các bước truy vết được. Quy trình phải giúp làm việc hiệu quả hơn.
+- **Hành vi:** Không để xảy ra vi phạm conventions. Quản lý backlog và Git flow. Code review chi tiết cho đồng nghiệp. Task phải có cách thực hiện và evidence rõ ràng.
+- **AI:** Đảm bảo tuân thủ quy trình cho toàn bộ output, cả người lẫn AI: DoR → implement → DoD → merge.
+- **Tham chiếu:** DoR/DoD
+
+### M2 · Apply → Analyze
+
+- **Giai đoạn trọng tâm:** Team Process Effectiveness, Project Process Architecture
+- **Chủ đề cốt lõi:** Team workflows, backlog hygiene. Standards, monitoring, quality gates. Tech-lead discipline. Clean code đa chiều, custom tooling.
+- **Vì sao:** Quy trình phải giúp làm việc hiệu quả hơn. Dự án cần thói quen engineering lặp lại được.
+- **Management:** Đảm bảo quy trình hiệu quả. Quản lý quy trình Git/backlog cho team.
+- **Expert:** Nâng clean code lên nhiều chiều. Xây code generators và custom tooling.
+- **AI:** Đánh giá việc dùng AI có làm thay đổi mức tuân thủ quy trình không. Coach team giữ kỷ luật.
+- **Tham chiếu:** V6
+
+### M3 · Analyze
+
+- **Giai đoạn trọng tâm:** Project Process Architecture, Cross-Project Engineering Standards
+- **Chủ đề cốt lõi:** Standards, monitoring, quality gates. Workflow tooling, engineering handbook. Change approval, shared standards.
+- **Vì sao:** Dự án cần thói quen engineering lặp lại được. Quy mô lớn cần thực hành thống nhất.
+- **Management:** Triển khai và giám sát engineering process. Thiết lập kỷ luật và quality gates. Thực hiện đầy đủ các hoạt động của Tech Lead.
+- **Expert:** Cải tiến quy trình và best practices. Hỗ trợ PO. Chuẩn hóa quy trình công ty.
+- **AI:** Thiết kế quy trình riêng cho AI: review bắt buộc, quality gates và Context Packet.
+- **Tham chiếu:** V5
+
+## Senior
+
+### S1 · Analyze → Evaluate
+
+- **Giai đoạn trọng tâm:** Cross-Project Engineering Standards, Process Governance & Excellence
+- **Chủ đề cốt lõi:** Workflow tooling, handbooks. Change approval, shared standards. Governance, excellence standards. Process improvement frameworks.
+- **Vì sao:** Quy mô lớn cần thực hành thống nhất. Department cần hệ thống quy trình bền vững.
+- **Management:** Quản trị quy trình trên nhiều dự án. Phê duyệt thay đổi quy trình. Thúc đẩy engineering standards và thực hành dùng chung.
+- **Expert:** Xây workflows/tooling, process best practices và engineering handbook.
+- **AI:** Đánh giá tác động của AI lên mức tuân thủ quy trình giữa các team. Xác định cách cân bằng tự động hóa và kỷ luật.
+- **Tham chiếu:** V6
+
+### S2 · Evaluate
+
+- **Giai đoạn trọng tâm:** Process Governance & Excellence, Organizational Engineering Culture
+- **Chủ đề cốt lõi:** Governance, excellence standards. Improvement frameworks. Engineering culture, organizational frameworks. AI-era practices.
+- **Vì sao:** Department cần hệ thống quy trình bền vững. Quy trình trở thành năng lực của tổ chức.
+- **Management:** Xây process standards cấp department. Giám sát việc áp dụng để tăng hiệu quả engineering.
+- **Expert:** Xây engineering excellence standards và process improvement frameworks.
+- **AI:** Thiết lập process standards cho AI-augmented development, cân bằng tốc độ với kỷ luật engineering.
+
+### S3 · Evaluate → Create
+
+- **Giai đoạn trọng tâm:** Organizational Engineering Culture
+- **Chủ đề cốt lõi:** Văn hóa và process framework tổ chức. AI-era engineering practices. Industry standards, manifesto adoption.
+- **Vì sao:** Quy trình trở thành năng lực của tổ chức.
+- **Management:** Xây văn hóa engineering và process framework ở quy mô tổ chức. Thúc đẩy áp dụng Manifesto.
+- **Expert:** Sáng tạo engineering practices mới, đóng góp vào industry standards.
+- **AI:** Kiến tạo AI-era process frameworks, định hình cách tổ chức vận hành engineering trong thời đại AI.

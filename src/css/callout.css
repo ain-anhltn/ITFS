@@ -1,0 +1,123 @@
+/* ---- Blockquote ---- */
+.markdown blockquote {
+  --ifm-blockquote-color: var(--itfs-color-text);
+  --ifm-blockquote-border-color: var(--itfs-color-border-strong);
+  --ifm-blockquote-border-left-width: 3px;
+  --ifm-blockquote-padding-vertical: var(--itfs-space-1);
+  --ifm-blockquote-padding-horizontal: var(--itfs-space-4);
+}
+
+.markdown blockquote > :last-child {
+  margin-bottom: 0;
+}
+
+.markdown blockquote > .theme-code-block {
+  margin-top: var(--itfs-space-2);
+}
+
+/* ---- Admonition ---- */
+.theme-admonition {
+  --callout-color: var(--itfs-color-note);
+  --callout-bg: var(--itfs-color-note-subtle);
+  --callout-bar-width: 3px;
+  --callout-icon-size: 1rem;
+  --callout-title-color: color-mix(
+    in srgb,
+    var(--callout-color) 80%,
+    var(--itfs-color-text)
+  );
+}
+
+.theme-admonition-info {
+  --callout-color: var(--itfs-color-info);
+  --callout-bg: var(--itfs-color-info-subtle);
+}
+
+.theme-admonition-tip {
+  --callout-color: var(--itfs-color-tip);
+  --callout-bg: var(--itfs-color-tip-subtle);
+}
+
+.theme-admonition-warning,
+.theme-admonition-caution {
+  --callout-color: var(--itfs-color-warning);
+  --callout-bg: var(--itfs-color-warning-subtle);
+}
+
+.theme-admonition-danger {
+  --callout-color: var(--itfs-color-danger);
+  --callout-bg: var(--itfs-color-danger-subtle);
+}
+
+.theme-admonition {
+  --ifm-alert-background-color: var(--callout-bg);
+  --ifm-alert-border-color: var(--callout-color);
+  --ifm-alert-foreground-color: var(--itfs-color-text);
+  --ifm-alert-border-left-width: var(--callout-bar-width);
+  --ifm-alert-padding-vertical: var(--itfs-space-3);
+  --ifm-alert-padding-horizontal: var(--itfs-space-4);
+  --ifm-alert-shadow: none;
+  --ifm-link-color: var(--itfs-color-accent-strong);
+  --ifm-link-hover-color: var(--itfs-color-accent);
+
+  color: var(--itfs-color-text);
+}
+
+.theme-admonition > div:first-child:not(:only-child) {
+  display: flex;
+  align-items: center;
+  gap: var(--itfs-space-2);
+  margin-bottom: var(--itfs-space-1);
+  color: var(--callout-title-color);
+  font-family: var(--itfs-font-family-base);
+  font-size: var(--itfs-font-size-xs);
+  font-weight: var(--itfs-font-weight-semibold);
+  line-height: var(--itfs-line-height-snug);
+  letter-spacing: var(--itfs-letter-spacing-wide);
+}
+
+.theme-admonition > div:first-child:not(:only-child) > span {
+  display: inline-flex;
+  margin: 0; /* bỏ margin-right mặc định, dùng gap */
+}
+
+.theme-admonition > div:first-child:not(:only-child) svg {
+  width: var(--callout-icon-size);
+  height: var(--callout-icon-size);
+  fill: currentColor;
+}
+
+/* Nội dung: phần tử cuối không để margin thừa */
+.theme-admonition > div:last-child > :last-child {
+  margin-bottom: 0;
+}
+
+/* ---- Details ---- */
+details.alert {
+  --ifm-alert-background-color: var(--itfs-color-surface);
+  --ifm-alert-border-color: var(--itfs-color-border);
+  --ifm-alert-foreground-color: var(--itfs-color-text);
+  --ifm-alert-border-left-width: 1px;
+  --ifm-alert-padding-vertical: var(--itfs-space-3);
+  --ifm-alert-padding-horizontal: var(--itfs-space-4);
+  --ifm-alert-shadow: none;
+  --ifm-link-color: var(--itfs-color-accent-strong);
+  --ifm-link-hover-color: var(--itfs-color-accent);
+  --docusaurus-details-decoration-color: var(--itfs-color-border-strong);
+}
+
+details.alert > summary {
+  border-radius: var(--itfs-radius-sm);
+  font-weight: var(--itfs-font-weight-semibold);
+  cursor: pointer;
+  transition: color var(--itfs-duration-fast) var(--itfs-ease-standard);
+}
+
+details.alert > summary:hover {
+  color: var(--itfs-color-accent-strong);
+}
+
+details.alert > summary:focus-visible {
+  outline: var(--itfs-focus-ring);
+  outline-offset: var(--itfs-focus-ring-offset);
+}

@@ -1,0 +1,21 @@
+/* ==========================================================================
+   ITFS DOCS — STYLE ENTRY
+   ========================================================================== */
+
+/* Base */
+@import "./fonts.css";
+@import "./tokens.css";
+@import "./infima.css";
+@import "./layout.css";
+
+/* Markdown */
+@import "./content.css";
+@import "./callout.css";
+@import "./code.css";
+@import "./table.css";
+
+/* Component */
+@import "./components.css";
+
+/* Utilities */
+@import "./utilities.css";

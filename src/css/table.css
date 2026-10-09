@@ -1,0 +1,244 @@
+/* ---- Component tokens ---- */
+.table-wrapper {
+  --table-font-size: var(--itfs-font-size-sm);
+  --table-line-height: var(--itfs-line-height-snug);
+  --table-pad-y: var(--itfs-space-2);
+  --table-pad-x: var(--itfs-space-3);
+
+  --table-border: var(--itfs-color-border);
+  --table-head-bg: var(--itfs-color-surface-hover);
+  --table-stripe-bg: var(--itfs-color-surface);
+  --table-hover-bg: color-mix(
+    in srgb,
+    var(--itfs-color-accent) 6%,
+    var(--itfs-color-bg)
+  );
+
+  --table-max-height: 70vh;
+  --table-col-wide: 14rem;
+  --table-matrix-head-width: 8rem;
+  --table-matrix-cell-width: 11rem;
+}
+
+/* ---- Wrapper ---- */
+.table-wrapper {
+  isolation: isolate;
+  margin-bottom: var(--md-flow-space, var(--itfs-space-5));
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+.markdown > .table-wrapper:last-child {
+  margin-bottom: 0;
+}
+
+.table-wrapper:focus-visible {
+  outline: var(--itfs-focus-ring);
+  outline-offset: var(--itfs-focus-ring-offset);
+}
+
+/* ---- Table ---- */
+.table-wrapper > table {
+  display: table;
+  margin: 0;
+  overflow: visible;
+  font-size: var(--table-font-size);
+  line-height: var(--table-line-height);
+  font-variant-numeric: tabular-nums;
+}
+
+.table-wrapper thead {
+  background-color: transparent;
+}
+
+.table-wrapper tr {
+  border-color: var(--table-border);
+}
+
+.table-wrapper tbody tr:nth-child(2n) {
+  background-color: var(--table-stripe-bg);
+}
+
+.table-wrapper :is(th, td) {
+  padding: var(--table-pad-y) var(--table-pad-x);
+  border-color: var(--table-border);
+  text-align: start;
+  vertical-align: top;
+}
+
+.table-wrapper th {
+  background-color: var(--table-head-bg);
+  color: var(--itfs-color-text);
+  font-weight: var(--itfs-font-weight-semibold);
+}
+
+.table-wrapper td.col-nowrap {
+  white-space: nowrap;
+}
+
+.table-wrapper th.col-wide {
+  min-width: var(--table-col-wide);
+}
+
+.table-wrapper td code {
+  white-space: nowrap;
+}
+
+.table-wrapper td a {
+  overflow-wrap: anywhere;
+}
+
+.table-wrapper caption {
+  caption-side: top;
+  padding: 0 0 var(--itfs-space-2);
+  color: var(--itfs-color-text-subtle);
+  font-size: var(--itfs-font-size-sm);
+  font-weight: var(--itfs-font-weight-medium);
+  text-align: start;
+}
+
+@media (hover: hover) {
+  .table-wrapper tbody tr:hover,
+  .table-wrapper tbody tr:hover > th {
+    background-color: var(--table-hover-bg);
+  }
+}
+
+/* ---- Variant ---- */
+.table-wrapper--compact {
+  --table-line-height: var(--itfs-line-height-tight);
+  --table-pad-y: var(--itfs-space-1);
+  --table-pad-x: var(--itfs-space-2);
+}
+
+.table-wrapper--sticky {
+  max-height: var(--table-max-height);
+  overflow: auto;
+}
+
+:is(.table-wrapper--sticky, .table-wrapper--matrix) > table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+:is(.table-wrapper--sticky, .table-wrapper--matrix) :is(th, td) {
+  border-style: solid;
+  border-width: 0 1px 1px 0;
+}
+
+:is(.table-wrapper--sticky, .table-wrapper--matrix) tr > :first-child {
+  border-left-width: 1px;
+}
+
+:is(.table-wrapper--sticky, .table-wrapper--matrix) thead th {
+  border-top-width: 1px;
+}
+
+.table-wrapper--sticky thead th {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  border-bottom-width: 2px;
+}
+
+.table-wrapper--matrix :is(tbody th[scope="row"], thead th:first-child) {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: var(--table-matrix-head-width);
+}
+
+.table-wrapper--matrix thead th:first-child {
+  z-index: 3; /* góc trên-trái nằm trên cả hàng và cột sticky */
+}
+
+.table-wrapper--matrix td {
+  min-width: var(--table-matrix-cell-width);
+}
+
+/* ---- Stack ---- */
+@media (max-width: 576px) {
+  .table-wrapper--stack {
+    overflow: visible;
+    max-height: none;
+    background: none;
+  }
+
+  .table-wrapper--stack > table,
+  .table-wrapper--stack tbody {
+    display: block;
+  }
+
+  .table-wrapper--stack caption {
+    display: block;
+  }
+
+  .table-wrapper--stack thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+  }
+
+  .table-wrapper--stack tbody tr,
+  .table-wrapper--stack tbody tr:nth-child(2n) {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    column-gap: var(--itfs-space-2);
+    margin-bottom: var(--itfs-space-2);
+    padding: var(--itfs-space-2) var(--itfs-space-3);
+    border: 1px solid var(--table-border);
+    border-radius: var(--itfs-radius-md);
+    background-color: transparent;
+    break-inside: avoid;
+  }
+
+  .table-wrapper--stack tbody tr:last-child {
+    margin-bottom: 0;
+  }
+
+  .table-wrapper--stack :is(td, th) {
+    grid-column: 1 / -1;
+    padding: var(--itfs-space-1) 0;
+    border: 0;
+    background: none;
+    text-align: start;
+  }
+
+  .table-wrapper--stack td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: calc(var(--itfs-space-1) / 2);
+    color: var(--itfs-color-text-muted);
+    font-size: var(--itfs-font-size-xs);
+    font-weight: var(--itfs-font-weight-semibold);
+  }
+
+  .table-wrapper--stack :is(td, th):first-child,
+  .table-wrapper--stack td.col-nowrap:first-child + td {
+    font-weight: var(--itfs-font-weight-semibold);
+  }
+
+  .table-wrapper--stack td:first-child::before,
+  .table-wrapper--stack td.col-nowrap:first-child + td::before {
+    content: none;
+  }
+
+  .table-wrapper--stack td.col-nowrap:first-child {
+    grid-column: 1;
+  }
+
+  .table-wrapper--stack td.col-nowrap:first-child + td {
+    grid-column: 2;
+  }
+
+  .table-wrapper--stack td.col-nowrap {
+    white-space: normal;
+  }
+
+  .table-wrapper--stack td:empty {
+    display: none;
+  }
+}

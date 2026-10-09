@@ -1,0 +1,281 @@
+/* ==========================================================================
+   LIGHT
+   ========================================================================== */
+:root {
+  color-scheme: light;
+
+  /* ---- Brand ---- */
+  --ifm-color-primary: #1e56ea;
+  --ifm-color-primary-dark: #1247d4;
+  --ifm-color-primary-darker: #0e3ebc;
+  --ifm-color-primary-darkest: #0a2d8a;
+  --ifm-color-primary-light: #3d70f5;
+  --ifm-color-primary-lighter: #5481f7;
+  --ifm-color-primary-lightest: #8eaafb;
+
+  /* ---- Typography ---- */
+  --itfs-font-family-base:
+    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Cantarell,
+    "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --itfs-font-family-heading: "Plus Jakarta Sans", var(--itfs-font-family-base);
+  --itfs-font-family-mono:
+    "Fira Code", ui-monospace, SFMono-Regular, Menlo, Consolas,
+    "Liberation Mono", monospace;
+
+  --itfs-font-size-xs: 0.75rem;
+  --itfs-font-size-sm: 0.875rem;
+  --itfs-font-size-base: 1rem;
+  --itfs-font-size-lg: 1.125rem;
+  --itfs-font-size-xl: 1.25rem;
+  --itfs-font-size-2xl: 1.5rem;
+  --itfs-font-size-3xl: 1.875rem;
+  --itfs-font-size-4xl: 2.25rem;
+  --itfs-font-size-code: 0.9em;
+
+  --itfs-font-weight-regular: 400;
+  --itfs-font-weight-medium: 500;
+  --itfs-font-weight-semibold: 600;
+  --itfs-font-weight-bold: 700;
+
+  --itfs-line-height-tight: 1.25;
+  --itfs-line-height-snug: 1.45;
+  --itfs-line-height-base: 1.65;
+  --itfs-line-height-code: 1.6;
+
+  --itfs-letter-spacing-tight: -0.015em;
+  --itfs-letter-spacing-wide: 0.04em;
+
+  /* ---- Neutral ---- */
+  --itfs-color-bg: #ffffff;
+  --itfs-color-surface: #f8fafc;
+  --itfs-color-surface-raised: #ffffff;
+  --itfs-color-surface-hover: #f1f5f9;
+  --itfs-color-text: #0f172a;
+  --itfs-color-text-muted: #475569;
+  --itfs-color-text-subtle: #64748b;
+  --itfs-color-border: #e2e8f0;
+  --itfs-color-border-strong: #7b8aa0;
+
+  /* ---- Accent ---- */
+  --itfs-color-accent: var(--ifm-color-primary);
+  --itfs-color-accent-strong: var(--ifm-color-primary-darker);
+  --itfs-color-on-accent: #ffffff;
+  --itfs-accent-subtle-mix: 8%;
+
+  /* ---- Semantic status ---- */
+  --itfs-color-note: #64748b;
+  --itfs-color-info: #0369a1;
+  --itfs-color-tip: #15803d;
+  --itfs-color-warning: #a16207;
+  --itfs-color-danger: #c62838;
+  --itfs-status-mix: 10%;
+
+  /* ---- Code ---- */
+  --itfs-code-bg: #f8fafc;
+  --itfs-code-text: #1e293b;
+  --itfs-code-inline-bg: #edf2f7;
+  --itfs-code-highlight-mix: 12%;
+  --itfs-code-diff-mix: 12%;
+
+  /* ---- Syntax highlighting ---- */
+  --itfs-syntax-comment: #56657a;
+  --itfs-syntax-punctuation: #475569;
+  --itfs-syntax-keyword: #7c3aed;
+  --itfs-syntax-string: #15723a;
+  --itfs-syntax-function: #1d4ed8;
+  --itfs-syntax-constant: #b13b0a;
+  --itfs-syntax-inserted: #15723a;
+  --itfs-syntax-deleted: #be123c;
+
+  /* ---- Spacing ---- */
+  --itfs-space-0: 0;
+  --itfs-space-1: 0.25rem;
+  --itfs-space-2: 0.5rem;
+  --itfs-space-3: 0.75rem;
+  --itfs-space-4: 1rem;
+  --itfs-space-5: 1.25rem;
+  --itfs-space-6: 1.5rem;
+  --itfs-space-8: 2rem;
+  --itfs-space-10: 2.5rem;
+  --itfs-space-12: 3rem;
+  --itfs-space-16: 4rem;
+
+  /* ---- Radius ---- */
+  --itfs-radius-sm: 0.375rem;
+  --itfs-radius-md: 0.5rem;
+  --itfs-radius-lg: 0.75rem;
+  --itfs-radius-xl: 1rem;
+  --itfs-radius-pill: 999px;
+
+  /* ---- Elevation ---- */
+  --itfs-shadow-color: 15 23 42;
+  --itfs-shadow-sm: 0 1px 2px rgb(var(--itfs-shadow-color) / 0.06);
+  --itfs-shadow-md: 0 4px 12px rgb(var(--itfs-shadow-color) / 0.08);
+  --itfs-shadow-elevated: 0 8px 24px rgb(var(--itfs-shadow-color) / 0.1);
+
+  /* ---- Focus ---- */
+  --itfs-focus-ring-width: 2px;
+  --itfs-focus-ring-offset: 2px;
+  --itfs-focus-ring-color: var(--itfs-color-accent);
+  --itfs-focus-ring: var(--itfs-focus-ring-width) solid
+    var(--itfs-focus-ring-color);
+
+  /* ---- Motion ---- */
+  --itfs-duration-fast: 150ms;
+  --itfs-duration-base: 250ms;
+  --itfs-ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
+  /* ---- Z-index ---- */
+  --itfs-z-dropdown: 100;
+
+  /* ---- Layout ---- */
+  --itfs-navbar-height: 3.75rem;
+  --itfs-menu-link-padding-y: 0.4rem;
+  --itfs-control-height: 2.25rem;
+  --itfs-touch-target: 2.75rem;
+}
+
+/* ==========================================================================
+   DARK
+   ========================================================================== */
+html[data-theme="dark"] {
+  color-scheme: dark;
+
+  /* ---- Brand ---- */
+  --ifm-color-primary: #82a8ff;
+  --ifm-color-primary-dark: #6090ff;
+  --ifm-color-primary-darker: #4f84ff;
+  --ifm-color-primary-darkest: #1c61ff;
+  --ifm-color-primary-light: #a4c0ff;
+  --ifm-color-primary-lighter: #b5ccff;
+  --ifm-color-primary-lightest: #e8f0ff;
+
+  /* ---- Neutral ---- */
+  --itfs-color-bg: #0b1120;
+  --itfs-color-surface: #131d33;
+  --itfs-color-surface-raised: #18233d;
+  --itfs-color-surface-hover: #1a2640;
+  --itfs-color-text: #e2e8f0;
+  --itfs-color-text-muted: #94a3b8;
+  --itfs-color-text-subtle: #7b8aa0;
+  --itfs-color-border: #243049;
+  --itfs-color-border-strong: #5b6b84;
+
+  /* ---- Accent ---- */
+  --itfs-color-accent-strong: var(--ifm-color-primary-light);
+  --itfs-color-on-accent: #050b18;
+  --itfs-accent-subtle-mix: 15%;
+
+  /* ---- Semantic status ---- */
+  --itfs-color-note: #94a3b8;
+  --itfs-color-info: #7dd3fc;
+  --itfs-color-tip: #4ade80;
+  --itfs-color-warning: #fbbf24;
+  --itfs-color-danger: #fb7185;
+  --itfs-status-mix: 14%;
+
+  /* ---- Code ---- */
+  --itfs-code-bg: #0d1527;
+  --itfs-code-text: #e2e8f0;
+  --itfs-code-inline-bg: #1c2840;
+  --itfs-code-highlight-mix: 18%;
+  --itfs-code-diff-mix: 15%;
+
+  /* ---- Syntax highlighting ---- */
+  --itfs-syntax-comment: #94a3b8;
+  --itfs-syntax-punctuation: #94a3b8;
+  --itfs-syntax-keyword: #c084fc;
+  --itfs-syntax-string: #86efac;
+  --itfs-syntax-function: #93c5fd;
+  --itfs-syntax-constant: #fdba74;
+  --itfs-syntax-inserted: #86efac;
+  --itfs-syntax-deleted: #fda4af;
+
+  /* ---- Elevation ---- */
+  --itfs-shadow-color: 0 0 0;
+  --itfs-shadow-sm: 0 1px 2px rgb(var(--itfs-shadow-color) / 0.3);
+  --itfs-shadow-md: 0 4px 12px rgb(var(--itfs-shadow-color) / 0.35);
+  --itfs-shadow-elevated: 0 8px 24px rgb(var(--itfs-shadow-color) / 0.45);
+}
+
+/* ==========================================================================
+   DERIVED
+   ========================================================================== */
+:root {
+  --itfs-color-accent-subtle: color-mix(
+    in srgb,
+    var(--itfs-color-accent) var(--itfs-accent-subtle-mix),
+    transparent
+  );
+  --itfs-color-note-subtle: color-mix(
+    in srgb,
+    var(--itfs-color-note) var(--itfs-status-mix),
+    var(--itfs-color-bg)
+  );
+  --itfs-color-info-subtle: color-mix(
+    in srgb,
+    var(--itfs-color-info) var(--itfs-status-mix),
+    var(--itfs-color-bg)
+  );
+  --itfs-color-tip-subtle: color-mix(
+    in srgb,
+    var(--itfs-color-tip) var(--itfs-status-mix),
+    var(--itfs-color-bg)
+  );
+  --itfs-color-warning-subtle: color-mix(
+    in srgb,
+    var(--itfs-color-warning) var(--itfs-status-mix),
+    var(--itfs-color-bg)
+  );
+  --itfs-color-danger-subtle: color-mix(
+    in srgb,
+    var(--itfs-color-danger) var(--itfs-status-mix),
+    var(--itfs-color-bg)
+  );
+
+  --itfs-code-highlight-bg: color-mix(
+    in srgb,
+    var(--itfs-color-accent) var(--itfs-code-highlight-mix),
+    transparent
+  );
+  --itfs-code-add-bg: color-mix(
+    in srgb,
+    var(--itfs-color-tip) var(--itfs-code-diff-mix),
+    transparent
+  );
+  --itfs-code-remove-bg: color-mix(
+    in srgb,
+    var(--itfs-color-danger) var(--itfs-code-diff-mix),
+    transparent
+  );
+
+  --itfs-hover-overlay: color-mix(
+    in srgb,
+    var(--itfs-color-text) 5%,
+    transparent
+  );
+
+  --itfs-mermaid-node-bg: color-mix(
+    in srgb,
+    var(--itfs-color-accent) var(--itfs-accent-subtle-mix),
+    var(--itfs-color-bg)
+  );
+  --itfs-mermaid-node-border: var(--itfs-color-accent);
+  --itfs-mermaid-text: var(--itfs-color-text);
+  --itfs-mermaid-line: var(--itfs-color-text-muted);
+  --itfs-mermaid-label-bg: var(--itfs-color-bg);
+  --itfs-mermaid-group-bg: var(--itfs-color-surface);
+  --itfs-mermaid-group-border: var(--itfs-color-border-strong);
+  --itfs-mermaid-note-bg: var(--itfs-color-warning-subtle);
+  --itfs-mermaid-note-border: var(--itfs-color-warning);
+}
+
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --itfs-duration-fast: 0ms;
+    --itfs-duration-base: 0ms;
+  }
+}

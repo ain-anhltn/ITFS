@@ -1,0 +1,140 @@
+/* ==========================================================================
+   DOCUSAURUS / INFIMA MAPPING
+   ========================================================================== */
+
+/* ---- Emphasis scale ---- */
+:root {
+  --ifm-color-emphasis-0: #ffffff;
+  --ifm-color-emphasis-100: #f8fafc;
+  --ifm-color-emphasis-200: #f1f5f9;
+  --ifm-color-emphasis-300: #e2e8f0;
+  --ifm-color-emphasis-400: #cbd5e1;
+  --ifm-color-emphasis-500: #94a3b8;
+  --ifm-color-emphasis-600: #64748b;
+  --ifm-color-emphasis-700: #475569;
+  --ifm-color-emphasis-800: #334155;
+  --ifm-color-emphasis-900: #1e293b;
+  --ifm-color-emphasis-1000: #0f172a;
+}
+
+html[data-theme="dark"] {
+  --ifm-color-emphasis-0: #0b1120;
+  --ifm-color-emphasis-100: #131d33;
+  --ifm-color-emphasis-200: #1a2640;
+  --ifm-color-emphasis-300: #243049;
+  --ifm-color-emphasis-400: #334155;
+  --ifm-color-emphasis-500: #475569;
+  --ifm-color-emphasis-600: #64748b;
+  --ifm-color-emphasis-700: #94a3b8;
+  --ifm-color-emphasis-800: #cbd5e1;
+  --ifm-color-emphasis-900: #e2e8f0;
+  --ifm-color-emphasis-1000: #ffffff;
+}
+
+/* ---- Mapping ---- */
+:root,
+html[data-theme="dark"] {
+  /* Background */
+  --ifm-background-color: var(--itfs-color-bg);
+  --ifm-background-surface-color: var(--itfs-color-surface);
+  --ifm-hover-overlay: var(--itfs-hover-overlay);
+
+  /* Typography */
+  --ifm-font-family-base: var(--itfs-font-family-base);
+  --ifm-heading-font-family: var(--itfs-font-family-heading);
+  --ifm-font-family-monospace: var(--itfs-font-family-mono);
+  --ifm-line-height-base: var(--itfs-line-height-base);
+  --ifm-heading-line-height: var(--itfs-line-height-tight);
+  --ifm-font-weight-normal: var(--itfs-font-weight-regular);
+  --ifm-font-weight-semibold: var(--itfs-font-weight-semibold);
+  --ifm-font-weight-bold: var(--itfs-font-weight-bold);
+  --ifm-heading-font-weight: var(--itfs-font-weight-bold);
+  --ifm-font-color-base: var(--itfs-color-text);
+  --ifm-color-content: var(--itfs-color-text);
+  --ifm-color-content-secondary: var(--itfs-color-text-muted);
+
+  /* Links */
+  --ifm-link-color: var(--itfs-color-accent);
+  --ifm-link-hover-color: var(--itfs-color-accent-strong);
+
+  /* Borders & tables */
+  --ifm-global-border-width: 1px;
+  --ifm-toc-border-color: var(--itfs-color-border);
+  --ifm-table-border-color: var(--itfs-color-border);
+  --ifm-table-stripe-background: var(--itfs-color-surface);
+  --ifm-hr-background-color: var(--itfs-color-border);
+
+  /* Radius & shadow */
+  --ifm-global-radius: var(--itfs-radius-md);
+  --ifm-code-border-radius: var(--itfs-radius-sm);
+  --ifm-card-border-radius: var(--itfs-radius-lg);
+  --ifm-global-shadow-lw: var(--itfs-shadow-sm);
+  --ifm-global-shadow-md: var(--itfs-shadow-md);
+  --ifm-global-shadow-tl: var(--itfs-shadow-elevated);
+
+  /* Motion */
+  --ifm-transition-fast: var(--itfs-duration-fast);
+  --ifm-transition-slow: var(--itfs-duration-base);
+  --ifm-transition-timing-default: var(--itfs-ease-standard);
+
+  /* Code */
+  --ifm-code-font-size: var(--itfs-font-size-code);
+  --ifm-code-background: var(--itfs-code-inline-bg);
+  --ifm-pre-background: var(--itfs-code-bg);
+  --ifm-pre-color: var(--itfs-code-text);
+  --ifm-pre-line-height: var(--itfs-line-height-code);
+  --prism-background-color: var(--itfs-code-bg);
+  --prism-color: var(--itfs-code-text);
+  --docusaurus-highlighted-code-line-bg: var(--itfs-code-highlight-bg);
+
+  /* Admonitions */
+  --ifm-color-secondary-contrast-background: var(--itfs-color-note-subtle);
+  --ifm-color-secondary-contrast-foreground: var(--itfs-color-text);
+  --ifm-color-success-contrast-background: var(--itfs-color-tip-subtle);
+  --ifm-color-success-contrast-foreground: var(--itfs-color-text);
+  --ifm-color-success-dark: var(--itfs-color-tip);
+  --ifm-color-info-contrast-background: var(--itfs-color-info-subtle);
+  --ifm-color-info-contrast-foreground: var(--itfs-color-text);
+  --ifm-color-info-dark: var(--itfs-color-info);
+  --ifm-color-warning-contrast-background: var(--itfs-color-warning-subtle);
+  --ifm-color-warning-contrast-foreground: var(--itfs-color-text);
+  --ifm-color-warning-dark: var(--itfs-color-warning);
+  --ifm-color-danger-contrast-background: var(--itfs-color-danger-subtle);
+  --ifm-color-danger-contrast-foreground: var(--itfs-color-text);
+  --ifm-color-danger-dark: var(--itfs-color-danger);
+
+  /* Layout */
+  --ifm-navbar-height: var(--itfs-navbar-height);
+  --ifm-navbar-background-color: var(--itfs-color-bg);
+  --ifm-footer-background-color: var(--itfs-color-surface);
+  --ifm-menu-link-padding-vertical: var(--itfs-menu-link-padding-y);
+  --ifm-menu-color-background-active: var(--itfs-color-accent-subtle);
+  --ifm-menu-color-background-hover: var(--itfs-color-surface-hover);
+  --ifm-toc-link-color: var(--itfs-color-text-muted);
+
+  /* Breadcrumb */
+  --ifm-breadcrumb-color-active: var(--itfs-color-accent);
+  --ifm-breadcrumb-item-background-active: transparent;
+
+  /* Tabs & cards */
+  --ifm-tabs-color: var(--itfs-color-text-muted);
+  --ifm-tabs-color-active: var(--itfs-color-accent-strong);
+  --ifm-tabs-color-active-border: var(--itfs-color-accent);
+  --ifm-card-background-color: var(--itfs-color-surface-raised);
+
+  /* Navbar search */
+  --ifm-navbar-search-input-background-color: var(--itfs-color-surface);
+  --ifm-navbar-search-input-color: var(--itfs-color-text);
+  --ifm-navbar-search-input-placeholder-color: var(--itfs-color-text-muted);
+
+  /* @easyops-cn/docusaurus-search-local */
+  --search-local-modal-background: var(--itfs-color-surface);
+  --search-local-modal-shadow: var(--itfs-shadow-elevated);
+  --search-local-hit-background: var(--itfs-color-surface-raised);
+  --search-local-hit-color: var(--itfs-color-text);
+  --search-local-hit-shadow: 0 0 0 1px var(--itfs-color-border);
+  --search-local-highlight-color: var(--itfs-color-accent);
+  --search-local-hit-active-color: var(--itfs-color-on-accent);
+  --search-local-muted-color: var(--itfs-color-text-subtle);
+  --search-local-input-active-border-color: var(--itfs-color-accent);
+}

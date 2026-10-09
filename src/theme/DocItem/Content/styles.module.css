@@ -1,0 +1,10 @@
+.wrapper {
+  position: relative;
+  min-width: 0;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: var(--itfs-space-3);
+}

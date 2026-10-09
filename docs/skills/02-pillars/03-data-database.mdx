@@ -1,0 +1,109 @@
+---
+title: 03 · Data & Database
+description: Mô hình hóa dữ liệu. Tối ưu truy vấn. Từ query cơ bản đến thiết kế data platform.
+---
+
+# Data & Database
+
+> **Mô hình hóa dữ liệu. Tối ưu truy vấn. Từ query cơ bản đến thiết kế data platform.**
+
+## Lộ trình học 9 giai đoạn
+
+| #   | Giai đoạn                               | Nội dung                                                                                        | Trọng tâm |
+| --- | --------------------------------------- | ----------------------------------------------------------------------------------------------- | --------- |
+| 1   | **Query Basics**                        | CRUD, data types, schema, ORM cơ bản                                                            | J1        |
+| 2   | **Data Modeling Fundamentals**          | Normalization (1NF–3NF), quan hệ (1-1, 1-n, n-n), constraints, SQL vs NoSQL                     | J1        |
+| 3   | **Schema & Query Optimization**         | Indexing, profiling query, migrations, Redis cơ bản                                             | J2        |
+| 4   | **Advanced Data Modeling**              | Model phức tạp, integrity, composite indexes, rollback migration                                | J2        |
+| 5   | **Data Systems & Caching**              | RDBMS, document, key-value, caching, aggregation                                                | J3        |
+| 6   | **Project Data Architecture**           | Data conventions, scaling, search engines, polyglot persistence                                 | M1        |
+| 7   | **Database Platform Selection**         | Chọn nền tảng theo consistency, latency, scale: RDBMS, document, key-value, search, time-series | M1        |
+| 8   | **Migration, Performance & Governance** | Migration rủi ro cao, hard query tuning, standards, review gates                                | M2 – M3   |
+| 9   | **Enterprise Data Architecture**        | Reference architectures, multi-platform strategy, tối ưu ở quy mô lớn                           | S1 – S3   |
+
+## Junior
+
+### J1 · Remember
+
+- **Giai đoạn trọng tâm:** Query Basics, Data Modeling Fundamentals
+- **Chủ đề cốt lõi:** CRUD, data types, schema, ORM. Normalization, relationships, constraints, SQL vs NoSQL.
+- **Vì sao:** Truy cập dữ liệu đúng bắt đầu từ query đúng. Cấu trúc dữ liệu quyết định tính nhất quán.
+- **Hành vi:** Viết query cơ bản (CRUD). Nhận biết kiểu dữ liệu và schema. Dùng ORM theo hướng dẫn.
+- **AI:** Dùng AI sinh query. Nhận biết khi query của AI trả kết quả sai.
+- **Tham chiếu:** P1
+
+### J2 · Understand
+
+- **Giai đoạn trọng tâm:** Schema & Query Optimization, Advanced Data Modeling
+- **Chủ đề cốt lõi:** Indexing, profiling, migrations, Redis cơ bản. Model phức tạp, integrity, composite indexes, rollback.
+- **Vì sao:** Hiệu năng phải được đo, không đoán. Hệ thống lớn dần cần độ tin cậy và an toàn.
+- **Hành vi:** Hiểu RDBMS (normalization, relationships, constraints). Giải thích được indexing, SQL vs NoSQL và data flow.
+- **AI:** Phát hiện query không tối ưu do AI viết (N+1, thiếu index).
+- **Tham chiếu:** P3
+
+### J3 · Understand → Apply
+
+- **Giai đoạn trọng tâm:** Data Systems & Caching
+- **Chủ đề cốt lõi:** RDBMS, document, key-value, caching, aggregation.
+- **Vì sao:** Mỗi loại workload cần chiến lược lưu trữ khác nhau.
+- **Hành vi:** Thiết kế schema cho feature đơn giản. Tối ưu query bằng indexing và profiler. Viết migrations. Bắt đầu dùng Redis caching.
+- **AI:** Kiểm chứng bằng profiler trên dữ liệu thật — AI không biết phân bố dữ liệu.
+- **Tham chiếu:** P8
+
+## Middle
+
+### M1 · Apply
+
+- **Giai đoạn trọng tâm:** Project Data Architecture, Database Platform Selection
+- **Chủ đề cốt lõi:** Data conventions, scaling, search, polyglot persistence. RDBMS, document, key-value, search, time-series.
+- **Vì sao:** Dự án cần pattern dữ liệu dùng chung. Độ phù hợp của nền tảng quyết định consistency, latency và scale.
+- **Hành vi:** Thiết kế data model cho module phức tạp, đảm bảo integrity và performance. Làm việc với RDBMS và ≥ 1 NoSQL. Redis caching. Composite indexes. Migration có rollback.
+- **AI:** AI sinh bản nháp schema, kỹ sư kiểm tra lại theo business rules và pattern ở production.
+- **Tham chiếu:** P8, V4
+
+### M2 · Apply → Analyze
+
+- **Giai đoạn trọng tâm:** Migration, Performance & Governance
+- **Chủ đề cốt lõi:** Platform migration, hard query tuning, standards, review gates.
+- **Vì sao:** Thay đổi rủi ro cần đo lường, an toàn và kiểm soát.
+- **Management:** Review quyết định data model. Phân tích bottleneck dữ liệu trên nhiều feature.
+- **Expert:** RDBMS vs Document vs Key-Value. Redis chuyên sâu. MongoDB aggregation. Cache invalidation.
+- **AI:** Phân tích giải pháp dữ liệu của AI dưới các ràng buộc production.
+
+### M3 · Analyze
+
+- **Giai đoạn trọng tâm:** Migration, Performance & Governance
+- **Chủ đề cốt lõi:** Platform migration, hard query tuning, standards, review gates.
+- **Vì sao:** Thay đổi rủi ro cần đo lường, an toàn và kiểm soát.
+- **Management:** Kiến trúc dữ liệu toàn project. Thúc đẩy data conventions. Lên kế hoạch scaling dữ liệu.
+- **Expert:** ElasticSearch custom tokenizer. Polyglot persistence. Data model cho high-traffic.
+- **AI:** Định nghĩa guideline: các tình huống mà gợi ý của AI nguy hiểm (mất dữ liệu, mất nhất quán).
+
+## Senior
+
+### S1 · Analyze → Evaluate
+
+- **Giai đoạn trọng tâm:** Enterprise Data Architecture
+- **Chủ đề cốt lõi:** Reference architectures, multi-platform strategy, tối ưu ở quy mô lớn.
+- **Vì sao:** Dữ liệu trở thành năng lực dài hạn của tổ chức.
+- **Management:** Đánh giá kiến trúc dữ liệu trên nhiều dự án. Phê duyệt lựa chọn database. Thúc đẩy data governance.
+- **Expert:** HA, replication, clustering. CDC. Kiến trúc dữ liệu phân tán.
+- **AI:** AI không đánh giá được trade-off CAP trong context cụ thể — kỹ sư phải làm.
+
+### S2 · Evaluate
+
+- **Giai đoạn trọng tâm:** Enterprise Data Architecture
+- **Chủ đề cốt lõi:** Reference architectures, multi-platform strategy, tối ưu ở quy mô lớn.
+- **Vì sao:** Dữ liệu trở thành năng lực dài hạn của tổ chức.
+- **Management:** Data standards & governance cho department. Đánh giá đầu tư hạ tầng dữ liệu.
+- **Expert:** Reference data architectures. Data platforms (lake, warehouse, mart).
+- **AI:** Đặt review gates cho schema và query do AI sinh trước khi lên production.
+
+### S3 · Evaluate → Create
+
+- **Giai đoạn trọng tâm:** Enterprise Data Architecture
+- **Chủ đề cốt lõi:** Reference architectures, multi-platform strategy, tối ưu ở quy mô lớn.
+- **Vì sao:** Dữ liệu trở thành năng lực dài hạn của tổ chức.
+- **Management:** Chiến lược dữ liệu của tổ chức. Data governance ở quy mô lớn.
+- **Expert:** Sáng tạo kiến trúc data platform. Enterprise data systems.
+- **AI:** Kiến tạo workflow data engineering có AI hỗ trợ.

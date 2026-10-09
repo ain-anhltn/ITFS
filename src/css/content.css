@@ -1,0 +1,287 @@
+/* ---- Component tokens ---- */
+.markdown {
+  --md-flow-space: var(--itfs-space-5);
+  --md-list-indent: var(--itfs-space-6);
+
+  --md-h1-size: var(--itfs-font-size-4xl);
+  --md-h2-size: var(--itfs-font-size-2xl);
+  --md-h3-size: var(--itfs-font-size-xl);
+  --md-h4-size: var(--itfs-font-size-lg);
+  --md-h5-size: var(--itfs-font-size-base);
+  --md-h6-size: var(--itfs-font-size-sm);
+
+  --md-h2-space-top: var(--itfs-space-10);
+  --md-h3-space-top: var(--itfs-space-8);
+  --md-h4-space-top: var(--itfs-space-6);
+  --md-h56-space-top: var(--itfs-space-5);
+  --md-hr-space: var(--itfs-space-8);
+
+  --md-heading-offset: calc(var(--ifm-navbar-height) + var(--itfs-space-6));
+}
+
+/* ---- Base ---- */
+.markdown {
+  color: var(--itfs-color-text);
+  font-size: var(--itfs-font-size-base);
+  line-height: var(--itfs-line-height-base);
+  overflow-wrap: break-word;
+}
+
+/* ---- Vertical rhythm ---- */
+.markdown
+  > :is(
+    p,
+    ul,
+    ol,
+    dl,
+    table,
+    blockquote,
+    figure,
+    details,
+    .theme-admonition,
+    .theme-code-block,
+    .tabs-container
+  ) {
+  margin-top: 0;
+  margin-bottom: var(--md-flow-space);
+}
+
+.markdown > :first-child {
+  margin-top: 0;
+}
+
+.markdown > :last-child {
+  margin-bottom: 0;
+}
+
+/* ---- Headings ---- */
+.markdown :is(h1, h2, h3, h4, h5, h6) {
+  color: var(--itfs-color-text);
+  font-family: var(--ifm-heading-font-family);
+  font-weight: var(--itfs-font-weight-semibold);
+  line-height: var(--itfs-line-height-snug);
+  text-wrap: balance;
+  scroll-margin-top: var(--md-heading-offset);
+}
+
+.markdown h1,
+.markdown h1:first-child {
+  margin: 0 0 var(--itfs-space-5);
+  font-size: var(--md-h1-size);
+  font-weight: var(--itfs-font-weight-bold);
+  line-height: var(--itfs-line-height-tight);
+  letter-spacing: calc(var(--itfs-letter-spacing-tight) * 2);
+}
+
+.markdown h2 {
+  margin: var(--md-h2-space-top) 0 var(--itfs-space-4);
+  font-size: var(--md-h2-size);
+  line-height: var(--itfs-line-height-tight);
+  letter-spacing: var(--itfs-letter-spacing-tight);
+}
+
+.markdown h3 {
+  margin: var(--md-h3-space-top) 0 var(--itfs-space-3);
+  font-size: var(--md-h3-size);
+  letter-spacing: var(--itfs-letter-spacing-tight);
+}
+
+.markdown h4 {
+  margin: var(--md-h4-space-top) 0 var(--itfs-space-2);
+  font-size: var(--md-h4-size);
+}
+
+.markdown :is(h5, h6) {
+  margin: var(--md-h56-space-top) 0 var(--itfs-space-2);
+}
+
+.markdown h5 {
+  font-size: var(--md-h5-size);
+}
+
+.markdown h6 {
+  color: var(--itfs-color-text-muted);
+  font-size: var(--md-h6-size);
+  letter-spacing: var(--itfs-letter-spacing-wide);
+  text-transform: uppercase;
+}
+
+.markdown :is(h1, h2, h3, h4, h5, h6) + :is(h2, h3, h4, h5, h6) {
+  margin-top: var(--itfs-space-4);
+}
+
+.markdown :is(strong, b) {
+  font-weight: var(--itfs-font-weight-semibold);
+}
+
+/* ---- Links ---- */
+.markdown a:not(.card, .hash-link) {
+  color: var(--itfs-color-accent-strong);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: color-mix(in srgb, currentColor 35%, transparent);
+  transition:
+    color var(--itfs-duration-fast) var(--itfs-ease-standard),
+    text-decoration-color var(--itfs-duration-fast) var(--itfs-ease-standard);
+}
+
+.markdown a:not(.card, .hash-link):hover {
+  color: var(--itfs-color-accent);
+  text-decoration-color: currentColor;
+}
+
+.markdown a:focus-visible {
+  outline: var(--itfs-focus-ring);
+  outline-offset: var(--itfs-focus-ring-offset);
+  border-radius: var(--itfs-radius-sm);
+}
+
+/* ---- Lists ---- */
+.markdown :is(ul, ol) {
+  padding-left: var(--md-list-indent);
+}
+
+.markdown li + li {
+  margin-top: var(--itfs-space-1);
+}
+
+.markdown li::marker {
+  color: var(--itfs-color-text-subtle);
+}
+
+.markdown li > :is(ul, ol) {
+  margin: var(--itfs-space-2) 0;
+}
+
+.markdown li > p {
+  margin-bottom: var(--itfs-space-2);
+}
+
+.markdown li > p:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- Horizontal rule ---- */
+.markdown hr {
+  height: 1px;
+  margin: var(--md-hr-space) 0;
+  border: 0;
+  background: var(--itfs-color-border);
+}
+
+/* ---- Heading anchors ---- */
+.markdown .hash-link {
+  padding-left: var(--itfs-space-1);
+  color: var(--itfs-color-text-subtle);
+  text-decoration: none;
+  opacity: 0;
+  transition:
+    opacity var(--itfs-duration-fast) var(--itfs-ease-standard),
+    color var(--itfs-duration-fast) var(--itfs-ease-standard);
+}
+
+.markdown :is(h1, h2, h3, h4, h5, h6):is(:hover, :focus-within) .hash-link {
+  opacity: 1;
+}
+
+.markdown .hash-link:is(:hover, :focus-visible) {
+  color: var(--itfs-color-accent);
+}
+
+/* ---- Keyboard ---- */
+.markdown kbd {
+  display: inline-block;
+  min-width: 1.6em;
+  padding: 0.125em 0.45em;
+  border: 1px solid var(--itfs-color-border);
+  border-bottom-color: var(--itfs-color-border-strong);
+  border-radius: var(--itfs-radius-sm);
+  background: var(--itfs-color-surface);
+  box-shadow: 0 1px 0 var(--itfs-color-border);
+  color: var(--itfs-color-text);
+  font-family: var(--itfs-font-family-mono);
+  font-size: 0.8125em;
+  font-weight: var(--itfs-font-weight-medium);
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: 0.05em;
+}
+
+/* ---- Images & figures ---- */
+.markdown img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--itfs-radius-md);
+}
+
+.markdown figure:not([class]) {
+  margin: 0 0 var(--md-flow-space);
+}
+
+.markdown figure:not([class]) > p {
+  margin: 0;
+}
+
+.markdown figure:not([class]) img {
+  display: block;
+  margin-inline: auto;
+}
+
+.markdown figcaption {
+  margin-top: var(--itfs-space-3);
+  color: var(--itfs-color-text-muted);
+  font-size: var(--itfs-font-size-sm);
+  line-height: var(--itfs-line-height-snug);
+}
+
+.markdown figure:not([class]) figcaption {
+  text-align: center;
+}
+
+/* ---- Definition lists ---- */
+.markdown dt {
+  margin-top: var(--itfs-space-4);
+  font-weight: var(--itfs-font-weight-semibold);
+}
+
+.markdown dt:first-child {
+  margin-top: 0;
+}
+
+.markdown dd {
+  margin: var(--itfs-space-1) 0 var(--itfs-space-3);
+  padding-left: var(--itfs-space-4);
+  border-left: 2px solid var(--itfs-color-border);
+  color: var(--itfs-color-text-muted);
+}
+
+.markdown dd:last-child {
+  margin-bottom: 0;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 996px) {
+  .markdown {
+    --md-h1-size: var(--itfs-font-size-3xl);
+    --md-h2-size: var(--itfs-font-size-xl);
+    --md-h3-size: var(--itfs-font-size-lg);
+    --md-h2-space-top: var(--itfs-space-8);
+    --md-h3-space-top: var(--itfs-space-6);
+  }
+}
+
+@media (max-width: 576px) {
+  .markdown {
+    --md-list-indent: var(--itfs-space-5);
+    --md-h1-size: var(--itfs-font-size-2xl);
+    --md-hr-space: var(--itfs-space-6);
+  }
+}
+
+@media (hover: none) {
+  .markdown .hash-link {
+    opacity: 1;
+  }
+}

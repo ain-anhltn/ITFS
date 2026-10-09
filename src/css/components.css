@@ -1,0 +1,98 @@
+/* ---- Tabs ---- */
+.tabs {
+  border-bottom: var(--layout-hairline);
+  font-size: var(--itfs-font-size-sm);
+}
+
+.tabs__item {
+  margin-bottom: -1px;
+  padding: var(--itfs-space-2) var(--itfs-space-4);
+  border-radius: var(--itfs-radius-md) var(--itfs-radius-md) 0 0;
+  font-weight: var(--itfs-font-weight-medium);
+  transition: var(--layout-transition);
+}
+
+.tabs__item:hover {
+  background: var(--itfs-color-surface-hover);
+  color: var(--itfs-color-text);
+}
+
+.tabs__item--active,
+.tabs__item--active:hover {
+  background: transparent;
+  font-weight: var(--itfs-font-weight-semibold);
+}
+
+.tabs__item:focus-visible {
+  outline: var(--itfs-focus-ring);
+  outline-offset: calc(var(--itfs-focus-ring-width) * -1);
+}
+
+/* ---- DocCard ---- */
+.row:has(> [class*="docCardListItem"]) {
+  --card-gap: var(--itfs-space-4);
+  --ifm-spacing-horizontal: calc(var(--card-gap) / 2);
+}
+
+[class*="docCardListItem"] {
+  margin-bottom: var(--card-gap);
+}
+
+@layer docusaurus.infima {
+  .card.padding--lg {
+    padding: var(--itfs-space-4) var(--itfs-space-5) !important;
+  }
+}
+
+.card {
+  border: var(--layout-hairline);
+  box-shadow: none;
+  transition: var(--layout-transition);
+}
+
+a.card:hover {
+  border-color: var(--itfs-color-accent);
+  background: var(--itfs-color-accent-subtle);
+}
+
+a.card:focus-visible {
+  outline: var(--itfs-focus-ring);
+  outline-offset: var(--itfs-focus-ring-offset);
+}
+
+.markdown .card h2,
+.card h2 {
+  margin: 0 0 var(--itfs-space-1);
+  font-size: var(--itfs-font-size-lg);
+  font-weight: var(--itfs-font-weight-semibold);
+  line-height: var(--itfs-line-height-snug);
+  letter-spacing: normal;
+}
+
+.card h2 > [class*="cardTitleIcon"] {
+  margin-right: var(--itfs-space-2);
+  font-size: 1.25rem;
+}
+
+.markdown .card p,
+.card p {
+  margin: 0;
+  color: var(--itfs-color-text-subtle);
+  font-size: var(--itfs-font-size-sm);
+  line-height: var(--itfs-line-height-snug);
+}
+
+/* ---- Mermaid container ---- */
+.docusaurus-mermaid-container {
+  margin-bottom: var(--md-flow-space, var(--itfs-space-5));
+  padding: var(--itfs-space-4);
+  overflow-x: auto;
+  border: var(--layout-hairline);
+  border-radius: var(--itfs-radius-md);
+  background: var(--itfs-color-surface);
+  text-align: center;
+}
+
+.docusaurus-mermaid-container svg {
+  height: auto;
+}

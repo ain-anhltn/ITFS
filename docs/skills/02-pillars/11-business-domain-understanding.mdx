@@ -1,0 +1,114 @@
+---
+title: 11 · Business & Domain Understanding
+description: Hiểu nghiệp vụ. Nắm domain. Từ đọc requirement đến phân tích hệ thống.
+---
+
+# Business & Domain Understanding
+
+> **Hiểu nghiệp vụ. Nắm domain. Từ đọc requirement đến phân tích hệ thống.**
+
+:::tip[Yếu tố khác biệt chính — chủ động Clarify]
+Đây là pillar thể hiện rõ nhất [Requirement Thinking](../01-framework/04-requirement-thinking.mdx). AI viết code rất nhanh, nhưng chỉ kỹ sư hiểu domain mới biết code đó có **giải đúng bài toán** hay không.
+:::
+
+## Lộ trình học 9 giai đoạn
+
+| #   | Giai đoạn                                    | Nội dung                                                                                     | Trọng tâm |
+| --- | -------------------------------------------- | -------------------------------------------------------------------------------------------- | --------- |
+| 1   | **Requirements Basics**                      | Requirements, user stories, acceptance criteria, stakeholders                                | J1        |
+| 2   | **Feature Intent Understanding**             | Business context, giá trị với end-user, câu hỏi clarify, intent của feature                  | J1 – J2   |
+| 3   | **Scope & Flow Translation**                 | Requirement → tasks, activity flows, ranh giới in/out-of-scope, gaps                         | J2 – J3   |
+| 4   | **Domain Clarification & Modeling**          | Use cases, UML, wireframes, domain rules, trade-offs                                         | J3 – M1   |
+| 5   | **Cross-Feature Business Analysis**          | Luồng cross-module, mâu thuẫn, gaps, facilitation                                            | M1 – M2   |
+| 6   | **Project Requirement Architecture**         | Chất lượng requirement, cầu nối business ↔ engineering, luồng end-to-end                     | M2 – M3   |
+| 7   | **Cross-Project Domain Strategy**            | DDD, chia sẻ tri thức domain, alignment                                                      | M3 – S1   |
+| 8   | **Requirement Governance & Standards**       | Requirement standards, BA best practices, ngăn lãng phí do hiểu sai                          | S1 – S2   |
+| 9   | **Enterprise Business Understanding Vision** | BA frameworks, cross-domain knowledge, enterprise business systems, AI-augmented domain work | S2 – S3   |
+
+## Junior
+
+### J1 · Remember
+
+- **Giai đoạn trọng tâm:** Requirements Basics, Feature Intent Understanding
+- **Chủ đề cốt lõi:** Requirements, user stories, acceptance criteria. Stakeholders. Business context, giá trị với end-user. Câu hỏi clarify, intent của feature.
+- **Vì sao:** Giao hàng bắt đầu từ hiểu đúng yêu cầu. Feature phải giải quyết vấn đề thật của người dùng.
+- **Hành vi:** Nhận biết business requirements, user stories và AC. Biết stakeholders là ai và cần hỏi ai khi requirement chưa rõ. Hiểu business context cơ bản và giá trị với end-user.
+- **AI:** Nhận biết khi implementation của AI không khớp intent của user story — đúng syntax/spec nhưng sai mục đích feature.
+- **Tham chiếu:** P1
+
+### J2 · Understand
+
+- **Giai đoạn trọng tâm:** Feature Intent Understanding, Scope & Flow Translation
+- **Chủ đề cốt lõi:** Business context, giá trị với end-user. Câu hỏi clarify, intent. Tasks, activity flows. Scope, gaps.
+- **Vì sao:** Feature phải giải quyết vấn đề thật của người dùng. Implementation cần ranh giới rõ ràng.
+- **Hành vi:** Hiểu vì sao feature quan trọng với end-user. Chủ động hỏi khi requirement mơ hồ, không ngồi chờ. Chuyển requirement thành tasks và activity flows. Xác định in/out-of-scope cơ bản và báo gaps.
+- **AI:** Phát hiện code AI "đúng spec nhưng sai intent". Dùng AI gợi ý câu hỏi clarify.
+- **Tham chiếu:** V2, P3
+
+### J3 · Understand → Apply
+
+- **Giai đoạn trọng tâm:** Scope & Flow Translation, Domain Clarification & Modeling
+- **Chủ đề cốt lõi:** Tasks, activity flows, scope. Use cases, UML, wireframes. Domain rules, trade-offs.
+- **Vì sao:** Implementation cần ranh giới rõ ràng. Công việc phức tạp cần ngôn ngữ business chung.
+- **Hành vi:** Chuyển requirement thành tasks. Vẽ activity diagram/business flow. Clarify scope trước khi code. Viết rõ domain rules và báo requirement gaps. Hiểu use cases, UML, wireframes và trade-offs.
+- **AI:** Cung cấp business context khi prompt AI. Viết Context Packet với domain rules rõ ràng để AI có đủ context.
+- **Tham chiếu:** P2
+
+## Middle
+
+### M1 · Apply
+
+- **Giai đoạn trọng tâm:** Domain Clarification & Modeling, Cross-Feature Business Analysis
+- **Chủ đề cốt lõi:** Use cases, UML, wireframes. Domain rules, trade-offs. Luồng cross-module, mâu thuẫn, gaps. Facilitation.
+- **Vì sao:** Công việc phức tạp cần ngôn ngữ business chung. Team phải clarify trước khi xây.
+- **Hành vi:** Xử lý requirement phức tạp bằng UML, use case, wireframe. Hiểu domain knowledge và business flows. **Không code khi requirement còn mơ hồ** — clarify đến khi rõ. Diễn đạt trade-off bằng ngôn ngữ business.
+- **AI:** Hiểu domain → prompt tốt hơn → code AI tốt hơn. Kiểm tra output của AI theo các business rule không được viết ra.
+- **Tham chiếu:** V2, P2
+
+### M2 · Apply → Analyze
+
+- **Giai đoạn trọng tâm:** Cross-Feature Business Analysis, Project Requirement Architecture
+- **Chủ đề cốt lõi:** Luồng business cross-module. Mâu thuẫn, gaps, facilitation. Chất lượng requirement. Cầu nối business ↔ engineering. Luồng end-to-end.
+- **Vì sao:** Team phải clarify trước khi xây. Dự án cần hiểu domain có cấu trúc.
+- **Management:** Quản lý requirements trên nhiều feature, phát hiện mâu thuẫn/gaps. Coach team clarify thay vì nhận spec rồi code. Điều phối thảo luận business.
+- **Expert:** Phân tích luồng business cross-module. Làm việc với ≥ 2–3 domains. Viết functional specs và wireframes.
+- **AI:** Đánh giá team có thực sự hiểu domain hay chỉ chuyển spec cho AI.
+- **Tham chiếu:** V2
+
+### M3 · Analyze
+
+- **Giai đoạn trọng tâm:** Project Requirement Architecture, Cross-Project Domain Strategy
+- **Chủ đề cốt lõi:** Chất lượng requirement. Cầu nối business ↔ engineering. Luồng business end-to-end. DDD, chia sẻ tri thức domain. Alignment, process.
+- **Vì sao:** Dự án cần hiểu domain có cấu trúc. Quy mô lớn cần tư duy domain dùng chung.
+- **Management:** Quản trị requirements toàn project. Thúc đẩy chất lượng requirement. Đảm bảo team không bỏ qua clarify chỉ vì AI code nhanh. Làm cầu nối business ↔ engineering.
+- **Expert:** Làm việc với ≥ 5 domains. Dùng BPM/BPMN. Thiết kế luồng business end-to-end.
+- **AI:** Hiểu domain là điều kiện tiên quyết để dùng AI hiệu quả.
+
+## Senior
+
+### S1 · Analyze → Evaluate
+
+- **Giai đoạn trọng tâm:** Cross-Project Domain Strategy, Requirement Governance & Standards
+- **Chủ đề cốt lõi:** DDD, chia sẻ tri thức domain. Business-technical alignment. BA best practices. Requirement standards.
+- **Vì sao:** Quy mô lớn cần tư duy domain dùng chung. Tổ chức phải ngăn lãng phí do hiểu sai.
+- **Management:** Quản trị quy trình requirement trên nhiều dự án. Xây dựng chia sẻ tri thức domain. Đảm bảo các team clarify đầy đủ trước khi code.
+- **Expert:** Business-technical alignment. Áp dụng DDD và BA best practices.
+- **AI:** Đánh giá giải pháp của AI có thực sự gắn với mục tiêu business trên nhiều dự án.
+
+### S2 · Evaluate
+
+- **Giai đoạn trọng tâm:** Requirement Governance & Standards, Enterprise Business Understanding Vision
+- **Chủ đề cốt lõi:** Requirement engineering standards. Văn hóa domain expertise. Tư duy hệ thống end-to-end. BA frameworks. Cross-domain knowledge.
+- **Vì sao:** Tổ chức phải ngăn lãng phí do hiểu sai. "Xây đúng thứ cần xây" trở thành năng lực của tổ chức.
+- **Management:** Xây requirement engineering standards cấp department. Phát triển văn hóa domain expertise. Ngăn lãng phí do hiểu sai khách hàng/business.
+- **Expert:** Phân tích hệ thống lớn end-to-end: Actor → Use Case → Flow → Specs → Architecture → Cost. Làm việc với ≥ 7 domains.
+- **AI:** Đặt ngưỡng hiểu biết domain tối thiểu trước khi dùng AI cho công việc business-critical.
+
+### S3 · Evaluate → Create
+
+- **Giai đoạn trọng tâm:** Enterprise Business Understanding Vision
+- **Chủ đề cốt lõi:** BA frameworks. Cross-domain knowledge. Enterprise business systems. DDD approaches. AI-augmented domain work.
+- **Vì sao:** "Xây đúng thứ cần xây" trở thành năng lực của tổ chức.
+- **Management:** Xây BA framework và business vision cấp tổ chức. Phát triển cross-domain knowledge và văn hóa "Build the Right Thing".
+- **Expert:** Sáng tạo cách tiếp cận DDD và định hướng enterprise business systems.
+- **AI:** Kết hợp domain expertise với AI để tạo lợi thế chiến lược trong việc hiểu, thiết kế và xây đúng giải pháp business.

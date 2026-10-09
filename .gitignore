@@ -1,0 +1,33 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+build/
+dist/
+.docusaurus/
+
+# Cache
+.cache/
+.cache-loader/
+
+# Generated content
+/.generated/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+
+# IDEs & editors
+.vscode/
+.idea/
+.history/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,110 @@
+---
+title: 07 · Performance & Optimization
+description: Đo lường trước. Tối ưu đúng. Từ nhận biết bottleneck đến hệ thống hiệu năng cao.
+---
+
+# Performance & Optimization
+
+> **Đo lường trước. Tối ưu đúng. Từ nhận biết bottleneck đến hệ thống hiệu năng cao.**
+
+## Lộ trình học 9 giai đoạn
+
+| #   | Giai đoạn                              | Nội dung                                                                     | Trọng tâm |
+| --- | -------------------------------------- | ---------------------------------------------------------------------------- | --------- |
+| 1   | **Performance Basics**                 | Response time, throughput, load time, DevTools & Network tab                 | J1        |
+| 2   | **Performance Principles**             | N+1, indexing, lazy loading, code splitting, Core Web Vitals                 | J2        |
+| 3   | **Profiling & Optimization**           | EXPLAIN plan, slow query log, profiling CPU/memory, đo lường thực tế         | J3        |
+| 4   | **Benchmarking & Caching**             | Benchmark (Apache Benchmark, k6, Lighthouse), Redis caching, tối ưu FE + BE  | M1        |
+| 5   | **Deep Optimization Strategy**         | Performance budget, deep profiling, cache invalidation, trade-offs           | M2        |
+| 6   | **Project Performance Architecture**   | CDN, proxy cache, I/O bottlenecks, multi-tier caching                        | J3 – M2   |
+| 7   | **Cross-Project Performance Strategy** | Load balancing, concurrency, performance testing, đầu tư hiệu năng           | M3        |
+| 8   | **Performance Governance & Standards** | Standards, hạ tầng, review gates trong CI/CD, high-performance architectures | S1 – S2   |
+| 9   | **Enterprise Performance Vision**      | Optimization frameworks, platform vision, AI-augmented workflows             | S3        |
+
+## Junior
+
+### J1 · Remember
+
+- **Giai đoạn trọng tâm:** Performance Basics
+- **Chủ đề cốt lõi:** Response time, throughput, load time. DevTools.
+- **Vì sao:** Hiệu năng bắt đầu từ việc nhìn thấy được.
+- **Hành vi:** Nhận biết response time, throughput. Dùng DevTools xem load time. Nhận biết khi ứng dụng chậm.
+- **AI:** Dùng AI giải thích vấn đề hiệu năng. Nhận biết và tránh premature optimization khi AI gợi ý.
+- **Tham chiếu:** P1
+
+### J2 · Understand
+
+- **Giai đoạn trọng tâm:** Performance Principles
+- **Chủ đề cốt lõi:** N+1, indexing, lazy loading, code splitting. Core Web Vitals.
+- **Vì sao:** Bottleneck phải được đo, không đoán.
+- **Hành vi:** Hiểu N+1, cách đo hiệu năng, indexing, lazy loading, code splitting, Core Web Vitals.
+- **AI:** Đánh giá gợi ý tối ưu của AI có hợp lý không.
+- **Tham chiếu:** P3
+
+### J3 · Understand → Apply
+
+- **Giai đoạn trọng tâm:** Profiling & Optimization, Project Performance Architecture
+- **Chủ đề cốt lõi:** Explain plans, slow query log, profiling, metrics. CDN, proxy cache, I/O bottlenecks, caching layers.
+- **Vì sao:** Bằng chứng tốt hơn phỏng đoán. Dự án cần nền tảng hiệu năng dùng chung.
+- **Hành vi:** Dùng query profiler (EXPLAIN, slow query log). Áp dụng indexing, lazy loading, code splitting. Đo và báo cáo metrics. Bắt đầu hiểu các nền tảng hiệu năng của dự án.
+- **AI:** AI gợi ý, kỹ sư phải kiểm chứng bằng profiling trên dữ liệu thật.
+- **Tham chiếu:** V1
+
+## Middle
+
+### M1 · Apply
+
+- **Giai đoạn trọng tâm:** Benchmarking & Caching
+- **Chủ đề cốt lõi:** Benchmarks, Redis caching. Tối ưu FE + BE. Performance targets.
+- **Vì sao:** Tốc độ cần được kiểm chứng lặp lại được.
+- **Hành vi:** Benchmark bằng Apache Benchmark/Lighthouse. Thiết lập Redis caching. Tối ưu FE + BE. Giao hàng đạt performance targets.
+- **AI:** AI gợi ý chiến lược caching, kỹ sư kiểm tra theo access pattern thực tế.
+- **Tham chiếu:** P8
+
+### M2 · Apply → Analyze
+
+- **Giai đoạn trọng tâm:** Deep Optimization Strategy, Project Performance Architecture
+- **Chủ đề cốt lõi:** Performance budgets, deep profiling. Cache invalidation, trade-offs. CDN, proxy cache, I/O bottlenecks, caching layers.
+- **Vì sao:** Quy mô lớn cần tối ưu có kỷ luật. Dự án cần nền tảng hiệu năng dùng chung.
+- **Management:** Theo dõi hiệu năng trên các feature. Đặt performance budgets. Review tác động hiệu năng của PR.
+- **Expert:** Thiết kế benchmark scenarios (Gatling/k6). Deep profiling. Cache invalidation. Tối ưu các tầng caching.
+- **AI:** Phân biệt pattern chung chung của AI với bottleneck thực tế. Không áp dụng gợi ý khi chưa có bằng chứng.
+- **Tham chiếu:** P12
+
+### M3 · Analyze
+
+- **Giai đoạn trọng tâm:** Cross-Project Performance Strategy
+- **Chủ đề cốt lõi:** Load balancing, concurrency. Performance testing. Đầu tư hiệu năng.
+- **Vì sao:** Quy mô lớn đòi hỏi chiến lược xuyên hệ thống.
+- **Management:** Xây kiến trúc hiệu năng toàn project. Định nghĩa standards. Lập roadmap cải thiện.
+- **Expert:** CDN, proxy cache. I/O bottlenecks. Caching layers. Cấu hình server.
+- **AI:** Gợi ý của AI phải được kiểm chứng bằng thực nghiệm trước khi áp dụng.
+
+## Senior
+
+### S1 · Analyze → Evaluate
+
+- **Giai đoạn trọng tâm:** Performance Governance & Standards
+- **Chủ đề cốt lõi:** Standards, hạ tầng, review gates. High-performance architectures.
+- **Vì sao:** Team cần thực hành bền vững.
+- **Management:** Quản trị performance standards trên nhiều dự án. Đánh giá đầu tư hạ tầng. Xây dựng văn hóa performance engineering.
+- **Expert:** Load balancing. Hệ thống 10k+ concurrent users. Chuẩn performance testing.
+- **AI:** Đảm bảo team không áp dụng mù quáng gợi ý tối ưu của AI.
+
+### S2 · Evaluate
+
+- **Giai đoạn trọng tâm:** Performance Governance & Standards
+- **Chủ đề cốt lõi:** Standards, hạ tầng, review gates. High-performance architectures.
+- **Vì sao:** Team cần thực hành bền vững.
+- **Management:** Performance standards cho department. Định hướng đầu tư hạ tầng và review gates.
+- **Expert:** Xây best practices và high-performance architecture ở cấp department.
+- **AI:** Thiết lập chuẩn phân tích hiệu năng có AI hỗ trợ.
+
+### S3 · Evaluate → Create
+
+- **Giai đoạn trọng tâm:** Enterprise Performance Vision
+- **Chủ đề cốt lõi:** Optimization frameworks. Platform vision. AI-augmented workflows.
+- **Vì sao:** Hiệu năng trở thành năng lực của tổ chức.
+- **Management:** Xây văn hóa và tầm nhìn performance engineering toàn tổ chức.
+- **Expert:** Sáng tạo optimization frameworks, xử lý extreme scale, định hướng platform performance.
+- **AI:** Kiến tạo workflow hiệu năng và optimization frameworks có AI hỗ trợ.

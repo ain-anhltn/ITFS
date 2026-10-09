@@ -1,0 +1,116 @@
+---
+title: 08 · Security Engineering
+description: Bảo mật từ đầu. Phòng thủ chủ động. Từ nhận biết lỗ hổng đến security culture.
+---
+
+# Security Engineering
+
+> **Bảo mật từ đầu. Phòng thủ chủ động. Từ nhận biết lỗ hổng đến security culture.**
+
+:::danger[Rủi ro cao nhất — Secure by Default (P9)]
+Bảo mật là thuộc tính mặc định của mọi thành phần. Không có ngoại lệ cho code "chạy thử" hay code do AI sinh. Nhận biết lỗi bảo mật trong code AI là **yêu cầu tối thiểu** ngay từ J1.
+:::
+
+## Lộ trình học 9 giai đoạn
+
+| #   | Giai đoạn                           | Nội dung                                                                     | Trọng tâm |
+| --- | ----------------------------------- | ---------------------------------------------------------------------------- | --------- |
+| 1   | **Security Basics**                 | XSS, SQL Injection, CSRF, bảo vệ dữ liệu nhạy cảm                            | J1        |
+| 2   | **Secure Coding Principles**        | AuthN vs AuthZ, HTTPS, CORS, quản lý secrets (không hardcode)                | J1 – J2   |
+| 3   | **Secure Delivery Practices**       | Input validation, output encoding, environment variables, security checklist | J2 – J3   |
+| 4   | **Auth & Application Security**     | JWT, sessions, RBAC, OWASP Top 10, encryption at rest / in transit           | J3 – M1   |
+| 5   | **Security Architecture & Review**  | OAuth2, SSO, SAST/DAST trong CI/CD, security review gates                    | M1 – M2   |
+| 6   | **Project Security Architecture**   | Security posture, pentest, attack vectors, defense-in-depth                  | M2 – M3   |
+| 7   | **Cross-Project Security Strategy** | Security testing, lựa chọn công cụ, architecture review, attack surface      | M3 – S1   |
+| 8   | **Security Governance & Standards** | Governance, security-first culture, emerging threats                         | S1 – S3   |
+| 9   | **Enterprise Security Vision**      | Security frameworks, AI-safe development, automated scanning ở quy mô lớn    | S2 – S3   |
+
+## Junior
+
+### J1 · Remember
+
+- **Giai đoạn trọng tâm:** Security Basics, Secure Coding Principles
+- **Chủ đề cốt lõi:** XSS, SQL Injection, CSRF, dữ liệu nhạy cảm. AuthN vs AuthZ, HTTPS, CORS, secrets.
+- **Vì sao:** Phát triển an toàn bắt đầu từ nhận thức về mối đe dọa cơ bản. Code chạy được vẫn có thể bị khai thác.
+- **Hành vi:** Nhận biết XSS, SQL Injection, CSRF và dữ liệu nhạy cảm. Hiểu quy tắc secure coding, AuthN vs AuthZ, HTTPS, CORS. Không hardcode secrets.
+- **AI:** Nhận biết lỗi bảo mật trong code AI như hardcoded secrets, thiếu validation. Đây là **yêu cầu tối thiểu**.
+- **Tham chiếu:** P9
+
+### J2 · Understand
+
+- **Giai đoạn trọng tâm:** Secure Coding Principles, Secure Delivery Practices
+- **Chủ đề cốt lõi:** Validation, output encoding. Environment variables. Security checklists. AuthN vs AuthZ, HTTPS, CORS.
+- **Vì sao:** Code chạy được vẫn có thể bị khai thác. Bảo mật phải nhất quán trước khi giao hàng.
+- **Hành vi:** Hiểu cơ chế tấn công. Áp dụng input validation, output encoding, env vars và security checklist trước khi giao hàng.
+- **AI:** Hiểu vì sao code AI có thể bị khai thác dù "chạy hoàn toàn đúng".
+- **Tham chiếu:** P9, V5
+
+### J3 · Understand → Apply
+
+- **Giai đoạn trọng tâm:** Secure Delivery Practices, Auth & Application Security
+- **Chủ đề cốt lõi:** Validation, output encoding, env vars. JWT, sessions, RBAC. OWASP Top 10. Encryption.
+- **Vì sao:** Bảo mật phải nhất quán trước khi giao hàng. Ứng dụng cần kiểm soát chặt quyền truy cập và dữ liệu.
+- **Hành vi:** Viết code bảo mật nhất quán. Dùng env vars. Input validation, output encoding. Hoàn thành security checklist trước khi giao hàng.
+- **AI:** Security review **mọi** dòng code do AI sinh trước khi commit. Checklist là bắt buộc.
+- **Tham chiếu:** P9, DoD
+
+## Middle
+
+### M1 · Apply
+
+- **Giai đoạn trọng tâm:** Auth & Application Security, Security Architecture & Review
+- **Chủ đề cốt lõi:** JWT, sessions, RBAC. OWASP Top 10, encryption. OAuth2, SSO. SAST/DAST, security review gates.
+- **Vì sao:** Ứng dụng cần kiểm soát chặt quyền truy cập và dữ liệu. Rủi ro hệ thống cần kiến trúc và kỷ luật.
+- **Hành vi:** Implement auth flows với JWT/session/RBAC. Làm chủ OWASP Top 10. Thực hiện security code review. Mã hóa dữ liệu at rest và in transit.
+- **AI:** Làm chủ bảo mật kể cả với code AI. Biết các lỗi AI hay mắc: auth yếu, thiếu rate limiting, IDOR.
+- **Tham chiếu:** P9, V5
+
+### M2 · Apply → Analyze
+
+- **Giai đoạn trọng tâm:** Security Architecture & Review, Project Security Architecture
+- **Chủ đề cốt lõi:** OAuth2, SSO. SAST/DAST, review gates. Security posture. Pentest, attack vectors, defense strategies.
+- **Vì sao:** Rủi ro hệ thống cần kiến trúc và kỷ luật. Dự án cần pattern bảo vệ dùng chung.
+- **Management:** Đánh giá rủi ro bảo mật trên các feature. Đảm bảo team tuân thủ security checklist. Review tác động bảo mật.
+- **Expert:** Thiết kế security architecture với OAuth2/SSO. SAST/DAST. Sửa lỗ hổng ở cấp hệ thống.
+- **AI:** Thiết lập security review gates bắt buộc cho output của AI.
+- **Tham chiếu:** V5
+
+### M3 · Analyze
+
+- **Giai đoạn trọng tâm:** Project Security Architecture, Cross-Project Security Strategy
+- **Chủ đề cốt lõi:** Security posture, standards. Pentest, attack vectors, defense strategies. Security testing, architecture review, lựa chọn công cụ.
+- **Vì sao:** Dự án cần pattern bảo vệ dùng chung. Quy mô lớn làm tăng attack surface và nhu cầu phối hợp.
+- **Management:** Quản trị security posture toàn project. Định nghĩa security standards. Không ngoại lệ cho code AI.
+- **Expert:** Pentest, attack vectors, chiến lược phòng thủ. Lan tỏa security practices giữa các team.
+- **AI:** Code AI phải qua **cùng** chuẩn bảo mật — zero tolerance.
+- **Tham chiếu:** P9
+
+## Senior
+
+### S1 · Analyze → Evaluate
+
+- **Giai đoạn trọng tâm:** Cross-Project Security Strategy, Security Governance & Standards
+- **Chủ đề cốt lõi:** Security testing. Lựa chọn công cụ, architecture review. Governance, security-first culture. Emerging threats.
+- **Vì sao:** Quy mô lớn làm tăng attack surface và nhu cầu phối hợp. Tổ chức cần chuẩn mực bền vững.
+- **Management:** Quản trị bảo mật trên nhiều dự án. Phê duyệt kiến trúc quan trọng. Thúc đẩy nhận thức và văn hóa security-first.
+- **Expert:** Định nghĩa security testing practices, đánh giá công cụ, phối hợp với Security team, theo dõi emerging threats.
+- **AI:** AI tăng tốc độ nhưng cũng tăng attack surface nếu thiếu review. Thiết lập chuẩn security review bắt buộc cho code AI ở cấp department.
+- **Tham chiếu:** V5
+
+### S2 · Evaluate
+
+- **Giai đoạn trọng tâm:** Security Governance & Standards, Enterprise Security Vision
+- **Chủ đề cốt lõi:** Governance, security-first culture. Security frameworks. AI-safe development. Automated scanning.
+- **Vì sao:** Tổ chức cần chuẩn mực bền vững. Bảo mật trở thành năng lực của tổ chức.
+- **Management:** Security standards cho department. Văn hóa security-first.
+- **Expert:** Best practices. Emerging threats. Phối hợp với Security team.
+- **AI:** Chuẩn security review bắt buộc cho code AI ở cấp department.
+
+### S3 · Evaluate → Create
+
+- **Giai đoạn trọng tâm:** Security Governance & Standards, Enterprise Security Vision
+- **Chủ đề cốt lõi:** Governance, security-first culture. Security frameworks. AI-safe development. Automated scanning.
+- **Vì sao:** Tổ chức cần chuẩn mực bền vững. Bảo mật trở thành năng lực của tổ chức.
+- **Management:** Chiến lược bảo mật của tổ chức. Security governance framework.
+- **Expert:** Sáng tạo security frameworks. Đóng góp thực hành cho ngành.
+- **AI:** Kiến tạo AI-safe development practices. Automated scanning ở quy mô lớn.

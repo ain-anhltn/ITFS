@@ -1,0 +1,110 @@
+---
+title: 04 · API Design & Integration
+description: Thiết kế API rõ ràng. Kết nối vững. Từ consume API đến kiến tạo platform.
+---
+
+# API Design & Integration
+
+> **Thiết kế API rõ ràng. Kết nối vững. Từ consume API đến kiến tạo platform.**
+
+## Lộ trình học 9 giai đoạn
+
+| #   | Giai đoạn                      | Nội dung                                                                     | Trọng tâm |
+| --- | ------------------------------ | ---------------------------------------------------------------------------- | --------- |
+| 1   | **API Basics**                 | HTTP methods, status codes, request/response, API clients (Postman/Insomnia) | J1        |
+| 2   | **API Principles**             | RESTful principles, auth, versioning, REST vs GraphQL                        | J1        |
+| 3   | **API Contract Design**        | Contracts, validation, error handling, Swagger/OpenAPI, third-party APIs     | J2        |
+| 4   | **Advanced API Contracts**     | Backward compatibility, OAuth2/SSO, pagination, rate limiting                | J2        |
+| 5   | **API Patterns & Performance** | REST, GraphQL, gRPC, real-time APIs, performance                             | J3        |
+| 6   | **Project API Architecture**   | Gateways, versioning strategy, system integration, lifecycle                 | J3        |
+| 7   | **Integration Strategy**       | Platform fit, microservice patterns, security, reliability                   | M1        |
+| 8   | **API Governance & Platforms** | Standards, API-first culture, developer experience, quality gates            | M2 – M3   |
+| 9   | **Enterprise API Strategy**    | API platforms, developer portals, integration vision, AI-augmented workflows | S1 – S3   |
+
+## Junior
+
+### J1 · Remember
+
+- **Giai đoạn trọng tâm:** API Basics, API Principles
+- **Chủ đề cốt lõi:** HTTP methods, status codes, request/response, API clients. RESTful principles, auth, versioning, REST vs GraphQL.
+- **Vì sao:** Tích hợp tin cậy bắt đầu từ nền tảng đúng. Conventions quyết định khả năng tương tác giữa các hệ thống.
+- **Hành vi:** Nhận biết HTTP methods, status codes, request/response. Dùng Postman/Insomnia. Gọi API theo tài liệu.
+- **AI:** Dùng AI sinh code gọi API. Nhận biết khi AI dùng sai method hoặc status code.
+- **Tham chiếu:** P1
+
+### J2 · Understand
+
+- **Giai đoạn trọng tâm:** API Contract Design, Advanced API Contracts
+- **Chủ đề cốt lõi:** Contracts, validation, errors, Swagger/OpenAPI, third-party APIs. Backward compatibility, OAuth2/SSO, pagination, rate limiting.
+- **Vì sao:** Contract rõ ràng giảm lỗi tích hợp. Hệ thống phát triển cần contract ổn định.
+- **Hành vi:** Hiểu RESTful principles, JWT/auth, REST vs GraphQL, API versioning.
+- **AI:** Phát hiện AI vi phạm RESTful conventions.
+- **Tham chiếu:** P3
+
+### J3 · Understand → Apply
+
+- **Giai đoạn trọng tâm:** API Patterns & Performance, Project API Architecture
+- **Chủ đề cốt lõi:** REST, GraphQL, gRPC, real-time APIs, performance. Gateways, versioning strategy, system integration, lifecycle.
+- **Vì sao:** Kiểu API phải phù hợp use case. Dự án cần pattern API dùng chung.
+- **Hành vi:** Thiết kế API contract và implement. Input validation, error handling. Tích hợp third-party API. Viết API docs (Swagger/OpenAPI).
+- **AI:** AI sinh implementation từ contract, kỹ sư kiểm tra business logic và edge cases.
+- **Tham chiếu:** P5
+
+## Middle
+
+### M1 · Apply
+
+- **Giai đoạn trọng tâm:** Integration Strategy
+- **Chủ đề cốt lõi:** Platform fit, microservice patterns, security, reliability.
+- **Vì sao:** Ranh giới hệ thống ảnh hưởng đến khả năng mở rộng.
+- **Hành vi:** Thiết kế API contract phức tạp, đảm bảo backward compatible. Tích hợp OAuth2/SSO phía consumer. Response format nhất quán. Rate limiting, pagination. Phối hợp contract giữa FE và BE.
+- **AI:** AI implement từ spec, kỹ sư làm chủ thiết kế contract và phối hợp giữa các team.
+- **Tham chiếu:** P2, P8
+
+### M2 · Apply → Analyze
+
+- **Giai đoạn trọng tâm:** API Governance & Platforms
+- **Chủ đề cốt lõi:** Standards, API-first culture, developer experience, quality gates.
+- **Vì sao:** Tổ chức cần tính nhất quán.
+- **Management:** Đảm bảo API nhất quán giữa các feature. Review API design. Điều phối standards.
+- **Expert:** REST vs GraphQL vs gRPC. Xây dựng OAuth2/SSO server. Real-time APIs. API performance.
+- **AI:** Kiểm tra code API do AI sinh có nhất quán với các contract hiện có.
+- **Tham chiếu:** V3
+
+### M3 · Analyze
+
+- **Giai đoạn trọng tâm:** API Governance & Platforms
+- **Chủ đề cốt lõi:** Standards, API-first culture, developer experience, quality gates.
+- **Vì sao:** Tổ chức cần tính nhất quán.
+- **Management:** Kiến trúc API toàn project. Design guidelines. Versioning strategy.
+- **Expert:** API Gateway patterns. Tích hợp system-to-system. API lifecycle.
+- **AI:** AI tốt cho implementation, yếu cho design — định nghĩa rõ ranh giới này.
+
+## Senior
+
+### S1 · Analyze → Evaluate
+
+- **Giai đoạn trọng tâm:** Enterprise API Strategy
+- **Chủ đề cốt lõi:** API platforms, developer portals, integration vision, AI-augmented workflows.
+- **Vì sao:** API trở thành năng lực của tổ chức.
+- **Management:** Đánh giá kiến trúc API trên nhiều dự án. Phê duyệt chiến lược tích hợp.
+- **Expert:** Giải pháp gateway. Microservice patterns (saga, choreography). API security.
+- **AI:** Đánh giá độ tin cậy ở production của code tích hợp do AI sinh.
+
+### S2 · Evaluate
+
+- **Giai đoạn trọng tâm:** Enterprise API Strategy
+- **Chủ đề cốt lõi:** API platforms, developer portals, integration vision, AI-augmented workflows.
+- **Vì sao:** API trở thành năng lực của tổ chức.
+- **Management:** API governance cho department. Xây dựng văn hóa API-first.
+- **Expert:** Kiến trúc API platform. Best practices tích hợp ở quy mô lớn.
+- **AI:** Quality gates cho tích hợp có AI hỗ trợ ở cấp department.
+
+### S3 · Evaluate → Create
+
+- **Giai đoạn trọng tâm:** Enterprise API Strategy
+- **Chủ đề cốt lõi:** API platforms, developer portals, integration vision, AI-augmented workflows.
+- **Vì sao:** API trở thành năng lực của tổ chức.
+- **Management:** Chiến lược API của tổ chức. Tầm nhìn integration platform.
+- **Expert:** Sáng tạo API platform/developer portal. Đóng góp cho ngành.
+- **AI:** Kiến tạo workflow phát triển API có AI hỗ trợ.
